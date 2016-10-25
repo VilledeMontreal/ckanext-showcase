@@ -33,6 +33,11 @@ Requirements
 
 Compatible with CKAN 2.3+.
 
+N.B. The ``migrate`` command, detailed below, requires the Related Item models
+and actions, which have been removed in CKAN 2.6. If you wish to migrate your
+Related Items, please first upgrade CKAN to 2.5, do the migration, then
+continue upgrading to CKAN 2.6+.
+
 
 ------------
 Installation
@@ -134,7 +139,11 @@ From the ``ckanext-showcase`` directory::
     paster showcase migrate -c {path to production.ini}
 
 Note that each Related Item must have a unique title before migration can
-proceed.
+proceed. If you prefer resolving duplicates as showcases, you can use the --allow-duplicates
+option to migrate them anyways. Duplicate Relations will be created as
+'duplicate_' + original_related_title + '_' + related_id
+
+    paster showcase migrate -c {path to production.ini} --allow-duplicates
 
 The Related Item property ``type`` will become a Showcase tag. The Related Item
 properties ``created``, ``owner_id``, ``view_count``, and ``featured`` have no

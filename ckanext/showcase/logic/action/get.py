@@ -143,7 +143,6 @@ def package_showcase_list(context, data_dict):
                 )
                 showcase_list.append(showcase)
             except NotAuthorized:
-                traceback.print_exc()
                 log.error('Not authorized to access Package with ID: '
                           + str(showcase_id))
 

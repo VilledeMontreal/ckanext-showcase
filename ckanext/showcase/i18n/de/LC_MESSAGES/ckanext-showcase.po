@@ -197,7 +197,7 @@ msgstr "Benutzer"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:51
 msgid "Are you sure you want to remove this user from the Showcase Admin list?"
-msgstr "Sind Sie sicher, dass Sie diesen Benutzer aus der Showcase Administratorenliste entfernen wollen?”
+msgstr "Sind Sie sicher, dass Sie diesen Benutzer aus der Showcase Administratorenliste entfernen wollen?"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:53
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
@@ -301,7 +301,7 @@ msgstr "Populär"
 #: ckanext/showcase/templates/showcase/add_datasets.html:31
 #: ckanext/showcase/templates/showcase/manage_datasets.html:36
 msgid "Datasets available to add to this showcase"
-msgstr " Datensätze  können zu diesem Showcase hinzugefügt werden.“
+msgstr "Datensätze  können zu diesem Showcase hinzugefügt werden."
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:48
 #: ckanext/showcase/templates/showcase/manage_datasets.html:51

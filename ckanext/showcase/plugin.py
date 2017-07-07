@@ -8,6 +8,7 @@ import ckan.lib.helpers as h
 from ckan.plugins import toolkit as tk
 from ckan.common import OrderedDict
 from ckan import model as ckan_model
+from ckan.lib.plugins import DefaultTranslation
 
 from routes.mapper import SubMapper
 
@@ -28,7 +29,8 @@ log = logging.getLogger(__name__)
 DATASET_TYPE_NAME = 'showcase'
 
 
-class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm):
+class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, DefaultTranslation):
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IDatasetForm)

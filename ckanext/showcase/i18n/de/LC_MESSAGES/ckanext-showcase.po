@@ -475,7 +475,7 @@ msgid ""
 "Sysadmins can manage Showcase Admins from the <a href='%(url)s'>Showcase "
 "configuration page</a>."
 msgstr ""
-"Sysadmins koennen Showcase Admins über die <a href='%(url)s'>"Showcase Konfigurationsseite" "
+"Sysadmins koennen Showcase Admins über die <a href='%(url)s'>\"Showcase Konfigurationsseite\" "
 "verwalten</a>."
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
 msgid "Submitted by"

@@ -466,8 +466,8 @@ msgid ""
 msgstr ""
 "Datensätze werden zur Erstellung von Anwendungen, Websites und Visualisierungen verwendet. "
 "Sie werden in Presseartikeln und Reportagen erwähnt. Showcases vereinen die besten "
-"Datensatz-Beispiele und dienen dazu, weitere Ideen, Inspiration und Überblick zu vermitteln. "
-"dient dazu, weitere Ideen, Inspiration und Überblick zu vermitteln."
+"Datensatz-Beispiele und dienen dazu, "
+"weitere Ideen, Inspiration und Überblick zu vermitteln. "
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:12
 #, python-format

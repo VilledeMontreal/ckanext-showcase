@@ -506,7 +506,7 @@ msgstr "0 Datensätze"
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:41
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:42
 msgid "View {showcase_title}"
-msgstr "View {Showcase Titel}"
+msgstr "View {showcase_title}"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
 msgid "Remove dataset from this showcase"

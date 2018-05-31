@@ -1,121 +1,124 @@
 # Translations template for ckanext-showcase.
-# Copyright (C) 2015 ORGANIZATION
+# Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the ckanext-showcase
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-showcase 1.0.0b1\n"
+"Project-Id-Version: ckanext-showcase 1.0.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-09-23 14:49+0100\n"
+"POT-Creation-Date: 2018-05-31 12:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 2.3.4\n"
 
-#: ckanext/showcase/controller.py:56
+#: ckanext/showcase/controller.py:55
 msgid "Unauthorized to create a package"
 msgstr ""
 
-#: ckanext/showcase/controller.py:71 ckanext/showcase/controller.py:267
+#: ckanext/showcase/controller.py:70 ckanext/showcase/controller.py:266
 msgid "User not authorized to edit {showcase_id}"
 msgstr ""
 
-#: ckanext/showcase/controller.py:147 ckanext/showcase/controller.py:184
-#: ckanext/showcase/controller.py:224 ckanext/showcase/controller.py:238
-#: ckanext/showcase/controller.py:274
+#: ckanext/showcase/controller.py:146 ckanext/showcase/controller.py:183
+#: ckanext/showcase/controller.py:223 ckanext/showcase/controller.py:237
+#: ckanext/showcase/controller.py:273
 msgid "Showcase not found"
 msgstr ""
 
-#: ckanext/showcase/controller.py:149 ckanext/showcase/controller.py:276
+#: ckanext/showcase/controller.py:148 ckanext/showcase/controller.py:275
 msgid "Unauthorized to read showcase"
 msgstr ""
 
-#: ckanext/showcase/controller.py:171 ckanext/showcase/controller.py:182
+#: ckanext/showcase/controller.py:170 ckanext/showcase/controller.py:181
 msgid "Unauthorized to delete showcase"
 msgstr ""
 
-#: ckanext/showcase/controller.py:176
+#: ckanext/showcase/controller.py:175
 msgid "Showcase has been deleted."
 msgstr ""
 
-#: ckanext/showcase/controller.py:201 ckanext/showcase/controller.py:210
+#: ckanext/showcase/controller.py:200 ckanext/showcase/controller.py:209
 msgid "Dataset not found"
 msgstr ""
 
-#: ckanext/showcase/controller.py:203
+#: ckanext/showcase/controller.py:202
 msgid "Not authorized to see this page"
 msgstr ""
 
-#: ckanext/showcase/controller.py:212
+#: ckanext/showcase/controller.py:211
 msgid "Unauthorized to read package"
 msgstr ""
 
-#: ckanext/showcase/controller.py:227 ckanext/showcase/controller.py:329
+#: ckanext/showcase/controller.py:226 ckanext/showcase/controller.py:328
 msgid "The dataset has been added to the showcase."
 msgid_plural "The datasets have been added to the showcase."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/controller.py:241 ckanext/showcase/controller.py:297
+#: ckanext/showcase/controller.py:240 ckanext/showcase/controller.py:296
 msgid "The dataset has been removed from the showcase."
 msgid_plural "The datasets have been removed from the showcase."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/controller.py:462 ckanext/showcase/templates/header.html:6
+#: ckanext/showcase/controller.py:464 ckanext/showcase/templates/header.html:6
 msgid "Organizations"
 msgstr ""
 
-#: ckanext/showcase/controller.py:463 ckanext/showcase/templates/header.html:7
-#: ckanext/showcase/templates/package/read_base.html:5
+#: ckanext/showcase/controller.py:465 ckanext/showcase/templates/header.html:7
 msgid "Groups"
 msgstr ""
 
-#: ckanext/showcase/controller.py:464 ckanext/showcase/plugin.py:103
+#: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:105
 #: ckanext/showcase/templates/showcase/new_package_form.html:33
 msgid "Tags"
 msgstr ""
 
-#: ckanext/showcase/controller.py:465
+#: ckanext/showcase/controller.py:467
 msgid "Formats"
 msgstr ""
 
-#: ckanext/showcase/controller.py:466
+#: ckanext/showcase/controller.py:468
 msgid "Licenses"
 msgstr ""
 
-#: ckanext/showcase/controller.py:516
+#: ckanext/showcase/controller.py:526
 msgid "Parameter '{parameter_name}' is not an integer"
 msgstr ""
 
-#: ckanext/showcase/controller.py:531 ckanext/showcase/controller.py:567
+#: ckanext/showcase/controller.py:541 ckanext/showcase/controller.py:577
 msgid "User not authorized to view page"
 msgstr ""
 
-#: ckanext/showcase/controller.py:540 ckanext/showcase/controller.py:581
+#: ckanext/showcase/controller.py:550 ckanext/showcase/controller.py:591
 msgid "Unauthorized to perform that action"
 msgstr ""
 
-#: ckanext/showcase/controller.py:542
+#: ckanext/showcase/controller.py:552
 msgid "User '{user_name}' not found."
 msgstr ""
 
-#: ckanext/showcase/controller.py:547
+#: ckanext/showcase/controller.py:557
 msgid "The user is now a Showcase Admin"
 msgstr ""
 
-#: ckanext/showcase/controller.py:583
+#: ckanext/showcase/controller.py:593
 msgid "The user is not a Showcase Admin"
 msgstr ""
 
-#: ckanext/showcase/controller.py:585
+#: ckanext/showcase/controller.py:595
 msgid "The user is no longer a Showcase Admin"
+msgstr ""
+
+#: ckanext/showcase/plugin.py:52
+msgid "Showcase Config"
 msgstr ""
 
 #: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
@@ -123,8 +126,35 @@ msgid "Not found"
 msgstr ""
 
 #: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
-#: ckanext/showcase/templates/package/read_base.html:4
 msgid "Dataset"
+msgstr ""
+
+#: ckanext/showcase/logic/action/create.py:71
+msgid ""
+"ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
+"already exists."
+msgstr ""
+
+#: ckanext/showcase/logic/action/create.py:72
+msgid "The dataset, {0}, is already in the showcase"
+msgstr ""
+
+#: ckanext/showcase/logic/action/create.py:102
+msgid "ShowcaseAdmin with user_id '{0}' already exists."
+msgstr ""
+
+#: ckanext/showcase/logic/action/create.py:103
+msgid "User '{0}' is already a Showcase Admin."
+msgstr ""
+
+#: ckanext/showcase/logic/action/delete.py:70
+msgid ""
+"ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
+"doesn't exist."
+msgstr ""
+
+#: ckanext/showcase/logic/action/delete.py:102
+msgid "ShowcaseAdmin with user_id '{0}' doesn't exist."
 msgstr ""
 
 #: ckanext/showcase/templates/header.html:5
@@ -133,7 +163,7 @@ msgstr ""
 
 #: ckanext/showcase/templates/header.html:8
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:3
-#: ckanext/showcase/templates/package/read_base.html:7
+#: ckanext/showcase/templates/package/read_base.html:5
 #: ckanext/showcase/templates/showcase/edit_base.html:5
 #: ckanext/showcase/templates/showcase/edit_base.html:17
 #: ckanext/showcase/templates/showcase/edit_base.html:21
@@ -251,10 +281,6 @@ msgstr ""
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:22
 msgid "There are no showcases that feature this dataset"
-msgstr ""
-
-#: ckanext/showcase/templates/package/read_base.html:6
-msgid "Activity Stream"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:3

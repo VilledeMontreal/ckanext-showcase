@@ -12,7 +12,7 @@
   {% block basic_fields %}
 
       {% block package_basic_fields_title %}
-        {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target'}) }}
+        {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-large'], attrs={'data-module': 'slug-preview-target', 'class': 'form-control'}) }}
       {% endblock %}
 
       {% block package_basic_fields_url %}
@@ -41,7 +41,7 @@
 
   {% block metadata_fields %}
     {% block package_metadata_fields_url %}
-      {{ form.input('url', label=_('External link'), id='field-url', placeholder=_('http://www.example.com'), value=data.url, error=errors.url, classes=['control-medium']) }}
+      {{ form.input('url', type="url", label=_('External link'), id='field-url', placeholder=_('http://www.example.com'), value=data.url, error=errors.url, classes=['control-medium']) }}
     {% endblock %}
 
     {% block package_metadata_author %}

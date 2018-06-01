@@ -32,14 +32,7 @@
             {% if self.content_action() | trim %}
               <div class="content_action">
                 {% block content_action %}
-                  {# Font Awesome was upgraded to v4 in CKAN 2.7 #}
-                  {% set is_fontawesome_v4 = h.check_ckan_version(min_version='2.7') %}
-                  {% if is_fontawesome_v4 %}
-                    {% set icon = 'eye' %}
-                  {% else %}
-                    {% set icon = 'eye-open' %}
-                  {% endif %}
-                  {% link_for _('View showcase'), controller='ckanext.showcase.controller:ShowcaseController', action='read', id=pkg.name, class_='btn', icon=icon %}
+                  {% link_for _('View showcase'), controller='ckanext.showcase.controller:ShowcaseController', action='read', id=pkg.name, class_='btn', icon='eye-open' %}
                 {% endblock %}
               </div>
             {% endif %}

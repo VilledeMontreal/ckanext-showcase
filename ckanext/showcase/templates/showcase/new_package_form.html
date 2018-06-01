@@ -2,7 +2,7 @@
 {% set action = c.form_action or '' %}
 {% set form_style = c.form_style or c.action %}
 
-<form id="dataset-edit" class="dataset-form form-horizontal" method="post" action="{{ action }}" data-module="basic-form" enctype="multipart/form-data">
+<form id="dataset-edit" class="dataset-form" method="post" action="{{ action }}" data-module="basic-form" enctype="multipart/form-data">
 
   <input type="hidden" name="_ckan_phase" value="dataset_new_1" />
   {# pkg_name used in 3 stage edit #}

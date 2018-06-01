@@ -45,3 +45,7 @@ td.ckanext_showcase_pagination_footer {
 .module-narrow .nav-item > a {
     word-break: break-word;
 }
+
+.media-grid .media-image{
+  max-width: 100%;
+}

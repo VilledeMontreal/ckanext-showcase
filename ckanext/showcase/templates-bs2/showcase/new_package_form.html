@@ -41,7 +41,7 @@
 
   {% block metadata_fields %}
     {% block package_metadata_fields_url %}
-      {{ form.input('url', label=_('External link'), id='field-url', placeholder=_('http://www.example.com'), value=data.url, error=errors.url, classes=['control-medium']) }}
+      {{ form.input('url', type="url", label=_('External link'), id='field-url', placeholder=_('http://www.example.com'), value=data.url, error=errors.url, classes=['control-medium']) }}
     {% endblock %}
 
     {% block package_metadata_author %}

@@ -49,3 +49,7 @@ td.ckanext_showcase_pagination_footer {
 .media-grid .media-image{
   max-width: 100%;
 }
+
+.no-nav .primary{
+  float: none;
+}

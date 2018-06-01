@@ -43,13 +43,13 @@
 {% block primary_content_inner %}
   {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
     <div class="actions">
-    {% link_for _('Manage'), controller='ckanext.showcase.controller:ShowcaseController', action='edit', id=pkg.name, class_='btn', icon='wrench' %}
+    {% link_for _('Manage'), controller='ckanext.showcase.controller:ShowcaseController', action='edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
     </div>
   {% endif %}
   {% block package_description %}
     {% if pkg.private %}
       <span class="dataset-private label label-inverse pull-right">
-        <i class="fa fa-lock icon-lock"></i>
+        <i class="fa fa-lock"></i>
         {{ _('Private') }}
       </span>
     {% endif %}
@@ -75,7 +75,7 @@
     {% endblock %}
 
     {% if pkg.url %}
-      <p><a class="btn btn-primary ckanext-showcase-launch" href="{{ pkg.url }}" target="_blank"><i class="fa fa-external-link icon-external-link"></i> {{ _('Launch website') }}</a></p>
+      <p><a class="btn btn-primary ckanext-showcase-launch" href="{{ pkg.url }}" target="_blank"><i class="fa fa-external-link"></i> {{ _('Launch website') }}</a></p>
     {% endif %}
 
   {% endblock %}

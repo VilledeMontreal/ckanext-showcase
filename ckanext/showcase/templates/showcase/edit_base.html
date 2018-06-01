@@ -39,7 +39,7 @@
                   {% else %}
                     {% set icon = 'eye-open' %}
                   {% endif %}
-                  {% link_for _('View showcase'), controller='ckanext.showcase.controller:ShowcaseController', action='read', id=pkg.name, class_='btn', icon=icon %}
+                  {% link_for _('View showcase'), controller='ckanext.showcase.controller:ShowcaseController', action='read', id=pkg.name, class_='btn btn-default', icon=icon %}
                 {% endblock %}
               </div>
             {% endif %}

@@ -28,6 +28,19 @@ log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'showcase'
 
+def register_translator():
+    # Register a translator in this thread so that
+    # the _() functions in logic layer can work
+    from paste.registry import Registry
+    from pylons import translator
+    from ckan.lib.cli import MockTranslator
+    global registry
+    registry = Registry()
+    registry.prepare()
+    global translator_obj
+    translator_obj = MockTranslator()
+    registry.register(translator, translator_obj)
+
 
 class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
                      DefaultTranslation):
@@ -45,6 +58,8 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
     # IConfigurer
 
     def update_config(self, config):
+        register_translator()
+
         tk.add_template_directory(config, 'templates')
         tk.add_public_directory(config, 'public')
         if tk.check_ckan_version(min_version='2.4'):

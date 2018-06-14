@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-showcase 1.0.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-05-31 12:53+0200\n"
+"POT-Creation-Date: 2018-06-14 13:30+0200\n"
 "PO-Revision-Date: 2018-06-09 00:37+0200\n"
+"Last-Translator: \n"
 "Language: mk\n"
 "Language-Team: mk <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-"Last-Translator: \n"
-"X-Generator: Poedit 2.0.8\n"
+"Generated-By: Babel 2.6.0\n"
 
 #: ckanext/showcase/controller.py:55
 msgid "Unauthorized to create a package"
@@ -78,7 +77,7 @@ msgstr "Организации"
 msgid "Groups"
 msgstr "Групи"
 
-#: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:105
+#: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:120
 #: ckanext/showcase/templates/showcase/new_package_form.html:33
 msgid "Tags"
 msgstr "Тагови"
@@ -119,7 +118,7 @@ msgstr "Овој корисник не е администратор на Апл
 msgid "The user is no longer a Showcase Admin"
 msgstr "Овој корисник повеќе не е администратор на Апликација"
 
-#: ckanext/showcase/plugin.py:52
+#: ckanext/showcase/plugin.py:67
 msgid "Showcase Config"
 msgstr "Конфигурација на Апликација"
 
@@ -138,8 +137,8 @@ msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "already exists."
 msgstr ""
-"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид '{0}' "
-"и апликација_ид '{1}' веќе постои."
+"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид "
+"'{0}' и апликација_ид '{1}' веќе постои."
 
 #: ckanext/showcase/logic/action/create.py:72
 msgid "The dataset, {0}, is already in the showcase"
@@ -158,8 +157,8 @@ msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "doesn't exist."
 msgstr ""
-"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид '{0}' "
-"и апликација_ид '{1}' не постои."
+"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид "
+"'{0}' и апликација_ид '{1}' не постои."
 
 #: ckanext/showcase/logic/action/delete.py:102
 msgid "ShowcaseAdmin with user_id '{0}' doesn't exist."
@@ -212,10 +211,11 @@ msgstr "Додадете постоечки корисник"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:19
 msgid ""
-"To make an existing user a Showcase Admin, search for their username below."
+"To make an existing user a Showcase Admin, search for their username "
+"below."
 msgstr ""
-"За да направите постоечки корисник Администратор на апликација, побарајте го "
-"неговото корисничко име подолу."
+"За да направите постоечки корисник Администратор на апликација, побарајте"
+" го неговото корисничко име подолу."
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:23
 msgid "Username"
@@ -236,8 +236,8 @@ msgstr "Корисник"
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:51
 msgid "Are you sure you want to remove this user from the Showcase Admin list?"
 msgstr ""
-"Дали сте сигурни дека сакате да го отстраните овој корисник од списокот на "
-"Администратори на апликации?"
+"Дали сте сигурни дека сакате да го отстраните овој корисник од списокот "
+"на Администратори на апликации?"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:53
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
@@ -250,11 +250,12 @@ msgstr "Во моментот нема администратори на Апл�
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:69
 msgid ""
-" <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can "
-"add and remove datasets from showcases.</p> "
+" <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can"
+" add and remove datasets from showcases.</p> "
 msgstr ""
-" <p><strong>Администратор на апликација:</strong> Може да креира и остранува "
-"апликации. Може да додава и отстранува податочни сетови од апликации.</p> "
+" <p><strong>Администратор на апликација:</strong> Може да креира и "
+"остранува апликации. Може да додава и отстранува податочни сетови од "
+"апликации.</p> "
 
 #: ckanext/showcase/templates/home/snippets/stats.html:5
 msgid "{site_title} statistics"
@@ -357,7 +358,8 @@ msgstr "Потврдете го бришењето"
 #: ckanext/showcase/templates/showcase/confirm_delete.html:11
 msgid "Are you sure you want to delete showcase - {showcase_name}?"
 msgstr ""
-"Дали сте сигурни дека саката да ја избришете апликацијата - {showcase_name}?"
+"Дали сте сигурни дека саката да ја избришете апликацијата - "
+"{showcase_name}?"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:19
 msgid "Edit"
@@ -496,16 +498,16 @@ msgstr "Што се Апликации?"
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:8
 msgid ""
-"Datasets have been used to build apps, websites and visualizations. They've "
-"been featured in articles, and written about in news reports and blog posts. "
-"Showcases collect together the best examples of datasets in use, to provide "
-"further insight, ideas, and inspiration."
+"Datasets have been used to build apps, websites and visualizations. "
+"They've been featured in articles, and written about in news reports and "
+"blog posts. Showcases collect together the best examples of datasets in "
+"use, to provide further insight, ideas, and inspiration."
 msgstr ""
-"Податочните сетови се користат за да се изградат апликации, веб-страници и "
-"визуелизации. Тие се прикажани во статии, и пишувани во извештаи за новости "
-"и објави на блогови. Апликациите ги собираат заедно најдобрите примери на "
-"податочни сетови што се користат, за да обезбедат натамошен увид, идеи и "
-"инспирација."
+"Податочните сетови се користат за да се изградат апликации, веб-страници "
+"и визуелизации. Тие се прикажани во статии, и пишувани во извештаи за "
+"новости и објави на блогови. Апликациите ги собираат заедно најдобрите "
+"примери на податочни сетови што се користат, за да обезбедат натамошен "
+"увид, идеи и инспирација."
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:12
 #, python-format
@@ -514,7 +516,8 @@ msgid ""
 "configuration page</a>."
 msgstr ""
 "Системските администратори можат да управуваат со администраторите на "
-"апликации од <a href='%(url)s'>Страница за конфигурација на апликација</a>."
+"апликации од <a href='%(url)s'>Страница за конфигурација на "
+"апликација</a>."
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
 msgid "Submitted by"
@@ -570,3 +573,4 @@ msgstr[1] "{number} пронајдени апликации"
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:10
 msgid "No showcases found"
 msgstr "Не се пронајдени апликации"
+

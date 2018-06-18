@@ -60,8 +60,23 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
     def update_config(self, config):
         register_translator()
 
-        tk.add_template_directory(config, 'templates')
-        tk.add_public_directory(config, 'public')
+        ckan_templates_dir = config.get('ckan.base_templates_folder')
+        ckan_public_dir = config.get('ckan.base_public_folder')
+        extension_templates_dir = 'templates'
+        extension_public_dir = 'public'
+
+        if tk.check_ckan_version(min_version='2.7'):
+            if ckan_templates_dir == 'templates-bs2':
+                extension_templates_dir = 'templates-bs2'
+                extension_public_dir = 'public-bs2'
+        else:
+            extension_templates_dir = 'templates-bs2'
+            extension_public_dir = 'public-bs2'
+
+        tk.add_template_directory(config, extension_templates_dir)
+        tk.add_public_directory(config, extension_public_dir)
+        tk.add_resource('fanstatic', 'showcase')
+
         if tk.check_ckan_version(min_version='2.4'):
             tk.add_ckan_admin_tab(config, 'ckanext_showcase_admins',
                                   tk._('Showcase Config'))
@@ -108,7 +123,8 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
     def get_helpers(self):
         return {
             'facet_remove_field': showcase_helpers.facet_remove_field,
-            'get_site_statistics': showcase_helpers.get_site_statistics
+            'get_site_statistics': showcase_helpers.get_site_statistics,
+            'check_ckan_version': tk.check_ckan_version
         }
 
     # IFacets
@@ -150,6 +166,15 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
         # These named routes are used for custom dataset forms which will use
         # the names below based on the dataset.type ('dataset' is the default
         # type)
+
+        # Font Awesome was upgraded to v4 in CKAN 2.7
+        is_fontawesome_v4 = tk.check_ckan_version(min_version='2.7')
+
+        if is_fontawesome_v4:
+            ckan_picture_icon = 'picture-o'
+        else:
+            ckan_picture_icon = 'picture'
+
         with SubMapper(map, controller='ckanext.showcase.controller:ShowcaseController') as m:
             m.connect('ckanext_showcase_index', '/showcase', action='search',
                       highlight_actions='index search')
@@ -157,16 +182,16 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
             m.connect('ckanext_showcase_delete', '/showcase/delete/{id}',
                       action='delete')
             m.connect('ckanext_showcase_read', '/showcase/{id}', action='read',
-                      ckan_icon='picture')
+                      ckan_icon=ckan_picture_icon)
             m.connect('ckanext_showcase_edit', '/showcase/edit/{id}',
                       action='edit', ckan_icon='edit')
             m.connect('ckanext_showcase_manage_datasets',
                       '/showcase/manage_datasets/{id}',
                       action="manage_datasets", ckan_icon="sitemap")
             m.connect('dataset_showcase_list', '/dataset/showcases/{id}',
-                      action='dataset_showcase_list', ckan_icon='picture')
+                      action='dataset_showcase_list', ckan_icon=ckan_picture_icon)
             m.connect('ckanext_showcase_admins', '/ckan-admin/showcase_admins',
-                      action='manage_showcase_admins', ckan_icon='picture'),
+                      action='manage_showcase_admins', ckan_icon=ckan_picture_icon),
             m.connect('ckanext_showcase_admin_remove',
                       '/ckan-admin/showcase_admin_remove',
                       action='remove_showcase_admin')

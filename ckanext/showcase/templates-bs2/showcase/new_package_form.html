@@ -2,7 +2,7 @@
 {% set action = c.form_action or '' %}
 {% set form_style = c.form_style or c.action %}
 
-<form id="dataset-edit" class="dataset-form" method="post" action="{{ action }}" data-module="basic-form" enctype="multipart/form-data">
+<form id="dataset-edit" class="dataset-form form-horizontal" method="post" action="{{ action }}" data-module="basic-form" enctype="multipart/form-data">
 
   <input type="hidden" name="_ckan_phase" value="dataset_new_1" />
   {# pkg_name used in 3 stage edit #}
@@ -12,7 +12,7 @@
   {% block basic_fields %}
 
       {% block package_basic_fields_title %}
-        {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-large'], attrs={'data-module': 'slug-preview-target', 'class': 'form-control'}) }}
+        {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target'}) }}
       {% endblock %}
 
       {% block package_basic_fields_url %}

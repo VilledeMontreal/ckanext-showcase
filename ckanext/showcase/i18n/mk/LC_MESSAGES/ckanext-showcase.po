@@ -71,7 +71,7 @@ msgstr[1] "Податочните сетови се отстранети од о
 
 #: ckanext/showcase/controller.py:464 ckanext/showcase/templates/header.html:6
 msgid "Organizations"
-msgstr "Организации"
+msgstr "Институции"
 
 #: ckanext/showcase/controller.py:465 ckanext/showcase/templates/header.html:7
 msgid "Groups"
@@ -104,7 +104,7 @@ msgstr "Не сте овластени да ја извршите таа акт�
 
 #: ckanext/showcase/controller.py:552
 msgid "User '{user_name}' not found."
-msgstr "Корисникот не е пронајден."
+msgstr "Корисникот '{user_name}' не е пронајден."
 
 #: ckanext/showcase/controller.py:557
 msgid "The user is now a Showcase Admin"
@@ -137,8 +137,8 @@ msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "already exists."
 msgstr ""
-"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид "
-"'{0}' и апликација_ид '{1}' веќе постои."
+"ShowcasePackageAssociation со package_id "
+"'{0}' и showcase_id '{1}' веќе постои."
 
 #: ckanext/showcase/logic/action/create.py:72
 msgid "The dataset, {0}, is already in the showcase"
@@ -146,7 +146,7 @@ msgstr "Податочниот сет, {0}, е веќе во апликациј�
 
 #: ckanext/showcase/logic/action/create.py:102
 msgid "ShowcaseAdmin with user_id '{0}' already exists."
-msgstr "Администраторот на апликација со корисник_ид '{0}' веќе постои."
+msgstr "ShowcaseAdmin со user_id '{0}' веќе постои."
 
 #: ckanext/showcase/logic/action/create.py:103
 msgid "User '{0}' is already a Showcase Admin."
@@ -157,12 +157,12 @@ msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "doesn't exist."
 msgstr ""
-"Асоцијација помеѓу Апликацијата и Податочниот сет со податочен_сет_ид "
-"'{0}' и апликација_ид '{1}' не постои."
+"ShowcasePackageAssociation со package_id "
+"'{0}' и showcase_id '{1}' не постои."
 
 #: ckanext/showcase/logic/action/delete.py:102
 msgid "ShowcaseAdmin with user_id '{0}' doesn't exist."
-msgstr "Администраторот на апликација со корисник_ид '{0}' не постои."
+msgstr "ShowcaseAdmin со user_id '{0}' не постои."
 
 #: ckanext/showcase/templates/header.html:5
 msgid "Datasets"
@@ -270,8 +270,8 @@ msgstr[1] "податочни сетови"
 #: ckanext/showcase/templates/home/snippets/stats.html:16
 msgid "organization"
 msgid_plural "organizations"
-msgstr[0] "организација"
-msgstr[1] "организации"
+msgstr[0] "институција"
+msgstr[1] "институции"
 
 #: ckanext/showcase/templates/home/snippets/stats.html:22
 msgid "group"

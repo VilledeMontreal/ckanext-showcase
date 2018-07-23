@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-showcase 1.0.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-06-14 13:30+0200\n"
+"POT-Creation-Date: 2018-07-23 14:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: ckanext/showcase/controller.py:55
 msgid "Unauthorized to create a package"
@@ -68,15 +68,15 @@ msgid_plural "The datasets have been removed from the showcase."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/controller.py:464 ckanext/showcase/templates/header.html:6
+#: ckanext/showcase/controller.py:464
 msgid "Organizations"
 msgstr ""
 
-#: ckanext/showcase/controller.py:465 ckanext/showcase/templates/header.html:7
+#: ckanext/showcase/controller.py:465
 msgid "Groups"
 msgstr ""
 
-#: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:120
+#: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:136
 #: ckanext/showcase/templates/showcase/new_package_form.html:33
 msgid "Tags"
 msgstr ""
@@ -117,7 +117,7 @@ msgstr ""
 msgid "The user is no longer a Showcase Admin"
 msgstr ""
 
-#: ckanext/showcase/plugin.py:67
+#: ckanext/showcase/plugin.py:82
 msgid "Showcase Config"
 msgstr ""
 
@@ -157,25 +157,17 @@ msgstr ""
 msgid "ShowcaseAdmin with user_id '{0}' doesn't exist."
 msgstr ""
 
-#: ckanext/showcase/templates/header.html:5
-msgid "Datasets"
-msgstr ""
-
-#: ckanext/showcase/templates/header.html:8
+#: ckanext/showcase/templates/header.html:6
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:3
 #: ckanext/showcase/templates/package/read_base.html:5
 #: ckanext/showcase/templates/showcase/edit_base.html:5
-#: ckanext/showcase/templates/showcase/edit_base.html:17
-#: ckanext/showcase/templates/showcase/edit_base.html:21
+#: ckanext/showcase/templates/showcase/edit_base.html:12
+#: ckanext/showcase/templates/showcase/edit_base.html:16
 #: ckanext/showcase/templates/showcase/read.html:6
-#: ckanext/showcase/templates/showcase/read.html:33
+#: ckanext/showcase/templates/showcase/read.html:28
 #: ckanext/showcase/templates/showcase/search.html:4
 #: ckanext/showcase/templates/showcase/search.html:7
 msgid "Showcases"
-msgstr ""
-
-#: ckanext/showcase/templates/header.html:9
-msgid "About"
 msgstr ""
 
 #: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:3
@@ -289,31 +281,31 @@ msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:21
 #: ckanext/showcase/templates/showcase/manage_datasets.html:24
-#: ckanext/showcase/templates/showcase/search.html:27
+#: ckanext/showcase/templates/showcase/search.html:34
 msgid "Relevance"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:22
 #: ckanext/showcase/templates/showcase/manage_datasets.html:25
-#: ckanext/showcase/templates/showcase/search.html:28
+#: ckanext/showcase/templates/showcase/search.html:35
 msgid "Name Ascending"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:23
 #: ckanext/showcase/templates/showcase/manage_datasets.html:26
-#: ckanext/showcase/templates/showcase/search.html:29
+#: ckanext/showcase/templates/showcase/search.html:36
 msgid "Name Descending"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:24
 #: ckanext/showcase/templates/showcase/manage_datasets.html:27
-#: ckanext/showcase/templates/showcase/search.html:30
+#: ckanext/showcase/templates/showcase/search.html:37
 msgid "Last Modified"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:25
 #: ckanext/showcase/templates/showcase/manage_datasets.html:28
-#: ckanext/showcase/templates/showcase/search.html:31
+#: ckanext/showcase/templates/showcase/search.html:38
 msgid "Popular"
 msgstr ""
 
@@ -341,25 +333,25 @@ msgstr ""
 msgid "Are you sure you want to delete showcase - {showcase_name}?"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:19
+#: ckanext/showcase/templates/showcase/edit_base.html:14
 msgid "Edit"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:22
+#: ckanext/showcase/templates/showcase/edit_base.html:17
 #: ckanext/showcase/templates/showcase/new.html:3
 #: ckanext/showcase/templates/showcase/new_package_form.html:63
 msgid "Create Showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:35
+#: ckanext/showcase/templates/showcase/edit_base.html:37
 msgid "View showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:41
+#: ckanext/showcase/templates/showcase/edit_base.html:43
 msgid "Edit showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:42
+#: ckanext/showcase/templates/showcase/edit_base.html:44
 msgid "Manage datasets"
 msgstr ""
 
@@ -447,28 +439,28 @@ msgstr ""
 msgid "Update Showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:46
+#: ckanext/showcase/templates/showcase/read.html:41
 msgid "Manage"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:53
+#: ckanext/showcase/templates/showcase/read.html:48
 msgid "Private"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:60
+#: ckanext/showcase/templates/showcase/read.html:55
 msgid "Draft"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:78
+#: ckanext/showcase/templates/showcase/read.html:73
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:27
 msgid "Launch website"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/search.html:13
+#: ckanext/showcase/templates/showcase/search.html:20
 msgid "Add Showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/search.html:33
+#: ckanext/showcase/templates/showcase/search.html:40
 msgid "Search showcases..."
 msgstr ""
 

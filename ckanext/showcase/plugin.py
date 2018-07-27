@@ -77,10 +77,6 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm,
         tk.add_public_directory(config, extension_public_dir)
         tk.add_resource('fanstatic', 'showcase')
 
-        if tk.check_ckan_version(min_version='2.4'):
-            tk.add_ckan_admin_tab(config, 'ckanext_showcase_admins',
-                                  tk._('Showcase Config'))
-
     # IConfigurable
 
     def configure(self, config):

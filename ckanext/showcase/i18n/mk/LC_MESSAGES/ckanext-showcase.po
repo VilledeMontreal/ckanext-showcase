@@ -486,7 +486,7 @@ msgstr "Пребарувајте апликации..."
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:4
 msgid "What are Showcases?"
-msgstr "Што се Апликации?"
+msgstr "Што се апликации?"
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:8
 msgid ""

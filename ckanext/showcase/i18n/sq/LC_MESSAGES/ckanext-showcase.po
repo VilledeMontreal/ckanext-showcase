@@ -484,7 +484,7 @@ msgstr "Kërkimi i aplikacioneve..."
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:4
 msgid "What are Showcases?"
-msgstr "Cilat janë aplikacionet?"
+msgstr "Çka janë aplikacionet?"
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:8
 msgid ""

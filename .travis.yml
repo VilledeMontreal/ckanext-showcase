@@ -22,6 +22,7 @@ env:
 >>>>>>> 67cb935 (fix travis build)
 =======
     - CKANVERSION=master
+    - CKANVERSION=2.8
     - CKANVERSION=2.7
     - CKANVERSION=2.6
     - CKANVERSION=2.5

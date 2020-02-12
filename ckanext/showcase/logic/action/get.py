@@ -81,6 +81,7 @@ def showcase_package_list(context, data_dict):
         id_list = []
         for pkg_id in pkg_id_list:
 <<<<<<< HEAD
+<<<<<<< HEAD
             try:
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -118,6 +119,14 @@ def showcase_package_list(context, data_dict):
         pkg_list = pkg_list['results']
 
 >>>>>>> ee7d155 (Batch list actions to a single query)
+=======
+            id_list.append(pkg_id[0])
+        q = ' OR '.join(['id:{0}'.format(x) for x in id_list])
+        _pkg_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'rows': 100})
+        pkg_list = _pkg_list['results']
+>>>>>>> 3cb90b1 (Use package_search to get related showcase/package)
     return pkg_list
 
 
@@ -144,8 +153,8 @@ def package_showcase_list(context, data_dict):
     # get a list of showcase ids associated with the package id
     showcase_id_list = ShowcasePackageAssociation.get_showcase_ids_for_package(
         validated_data_dict['package_id'])
-
     showcase_list = []
+<<<<<<< HEAD
     if showcase_id_list is not None:
         # for each package id, get the package dict and append to list if
         # active
@@ -188,6 +197,22 @@ def package_showcase_list(context, data_dict):
         showcase_list = showcase_list['results']
 
 >>>>>>> ee7d155 (Batch list actions to a single query)
+=======
+    # import ipdb; ipdb.sset_trace()
+    q = ''
+    fq = ''
+    if showcase_id_list:
+        id_list = []
+        for showcase_id in showcase_id_list:
+            id_list.append(showcase_id[0])
+        fq = 'dataset_type:showcase'
+        q = ' OR '.join(['id:{0}'.format(x) for x in id_list])
+        _showcase_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'fq': fq, 'rows': 100})
+        showcase_list = _showcase_list['results']
+
+>>>>>>> 3cb90b1 (Use package_search to get related showcase/package)
     return showcase_list
 
 

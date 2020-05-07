@@ -59,8 +59,14 @@ class ShowcasePlugin(MixinPlugin, plugins.SingletonPlugin, lib_plugins.DefaultDa
     # IConfigurer
 
     def update_config(self, config):
+<<<<<<< HEAD:ckanext/showcase/plugin/__init__.py
         tk.add_template_directory(config, '../templates')
         tk.add_public_directory(config, '../public')
+=======
+        tk.add_template_directory(config, 'templates')
+        tk.add_public_directory(config, 'public')
+        tk.add_resource('fanstatic', 'showcase')
+>>>>>>> e76f8e6 (Add ckeditor as wysiwsg editor):ckanext/showcase/plugin.py
         if tk.check_ckan_version(min_version='2.4'):
             tk.add_ckan_admin_tab(config, 'showcase_admins',
                                   'Showcase Config')
@@ -124,7 +130,8 @@ class ShowcasePlugin(MixinPlugin, plugins.SingletonPlugin, lib_plugins.DefaultDa
     def get_helpers(self):
         return {
             'facet_remove_field': showcase_helpers.facet_remove_field,
-            'get_site_statistics': showcase_helpers.get_site_statistics
+            'get_site_statistics': showcase_helpers.get_site_statistics,
+            'get_wysiwyg_editor': showcase_helpers.get_wysiwyg_editor,
         }
 
     # IFacets

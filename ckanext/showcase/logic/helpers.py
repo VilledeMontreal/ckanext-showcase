@@ -31,5 +31,4 @@ def get_site_statistics():
 
 
 def get_wysiwyg_editor():
-    print(tk.config.get('ckanext.showcase.editor', ''))
     return tk.config.get('ckanext.showcase.editor', '')

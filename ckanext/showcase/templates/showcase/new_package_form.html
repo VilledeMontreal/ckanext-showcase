@@ -26,6 +26,7 @@
 
       {% block package_basic_fields_description %}
         {% set editor = h.get_wysiwyg_editor() %}
+<<<<<<< HEAD
           {% if editor == 'ckeditor' %}
               {% set _type = 'asset' if h.ckan_version() > '2.9' else 'resource'  %}
 
@@ -36,6 +37,13 @@
               <textarea id="editor" name="notes" data-module="showcase-ckeditor"> {{ data.notes }} </textarea>
             </div>
           </div>
+=======
+        {% if editor == 'ckeditor' %}
+          {% resource 'showcase/dist/ckeditor.js' %}
+          {% resource 'showcase/js/showcase-ckeditor.js' %}
+          {% set attrs = {'data-module': 'showcase-ckeditor'} %}
+          {{ form.textarea('notes', id='editor', label=_('Description'), placeholder=_('eg. Some useful notes about the data'), value=data.notes, error=errors.notes, attrs=attrs)}}
+>>>>>>> 186a023 (Use form.textarea instead of plain html)
         {% else %}
           {{ form.markdown('notes', id='field-notes', label=_('Description'), placeholder=_('eg. Some useful notes about the data'), value=data.notes, error=errors.notes) }}
         {% endif %}

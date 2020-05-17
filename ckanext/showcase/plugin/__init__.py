@@ -143,12 +143,102 @@ class ShowcasePlugin(
     # IAuthFunctions
 
     def get_auth_functions(self):
+<<<<<<< HEAD:ckanext/showcase/plugin/__init__.py
         return auth.get_auth_functions()
+=======
+        return {
+            'ckanext_showcase_create': ckanext.showcase.logic.auth.create,
+            'ckanext_showcase_update': ckanext.showcase.logic.auth.update,
+            'ckanext_showcase_delete': ckanext.showcase.logic.auth.delete,
+            'ckanext_showcase_show': ckanext.showcase.logic.auth.show,
+            'ckanext_showcase_list': ckanext.showcase.logic.auth.list,
+            'ckanext_showcase_package_association_create':
+                ckanext.showcase.logic.auth.package_association_create,
+            'ckanext_showcase_package_association_delete':
+                ckanext.showcase.logic.auth.package_association_delete,
+            'ckanext_showcase_package_list':
+                ckanext.showcase.logic.auth.showcase_package_list,
+            'ckanext_package_showcase_list':
+                ckanext.showcase.logic.auth.package_showcase_list,
+            'ckanext_showcase_admin_add':
+                ckanext.showcase.logic.auth.add_showcase_admin,
+            'ckanext_showcase_admin_remove':
+                ckanext.showcase.logic.auth.remove_showcase_admin,
+            'ckanext_showcase_admin_list':
+                ckanext.showcase.logic.auth.showcase_admin_list,
+            'ckanext_showcase_upload':
+                ckanext.showcase.logic.auth.showcase_upload
+        }
+
+    # IRoutes
+
+    def before_map(self, map):
+        # These named routes are used for custom dataset forms which will use
+        # the names below based on the dataset.type ('dataset' is the default
+        # type)
+        with SubMapper(map, controller='ckanext.showcase.controller:ShowcaseController') as m:
+            m.connect('ckanext_showcase_index', '/showcase', action='search',
+                      highlight_actions='index search')
+            m.connect('ckanext_showcase_new', '/showcase/new', action='new')
+            m.connect('ckanext_showcase_delete', '/showcase/delete/{id}',
+                      action='delete')
+            m.connect('ckanext_showcase_read', '/showcase/{id}', action='read',
+                      ckan_icon='picture')
+            m.connect('ckanext_showcase_edit', '/showcase/edit/{id}',
+                      action='edit', ckan_icon='edit')
+            m.connect('ckanext_showcase_manage_datasets',
+                      '/showcase/manage_datasets/{id}',
+                      action="manage_datasets", ckan_icon="sitemap")
+            m.connect('dataset_showcase_list', '/dataset/showcases/{id}',
+                      action='dataset_showcase_list', ckan_icon='picture')
+            m.connect('ckanext_showcase_admins', '/ckan-admin/showcase_admins',
+                      action='manage_showcase_admins', ckan_icon='picture'),
+            m.connect('ckanext_showcase_admin_remove',
+                      '/ckan-admin/showcase_admin_remove',
+                      action='remove_showcase_admin'),
+            m.connect('showcase_upload', '/showcase_upload',
+                    action='showcase_upload')
+        map.redirect('/showcases', '/showcase')
+        map.redirect('/showcases/{url:.*}', '/showcase/{url}')
+        return map
+>>>>>>> bd1fd3c (Add upload feature for CKEditor content):ckanext/showcase/plugin.py
 
     # IActions
 
     def get_actions(self):
+<<<<<<< HEAD:ckanext/showcase/plugin/__init__.py
         return action.get_actions()
+=======
+        action_functions = {
+            'ckanext_showcase_create':
+                ckanext.showcase.logic.action.create.showcase_create,
+            'ckanext_showcase_update':
+                ckanext.showcase.logic.action.update.showcase_update,
+            'ckanext_showcase_delete':
+                ckanext.showcase.logic.action.delete.showcase_delete,
+            'ckanext_showcase_show':
+                ckanext.showcase.logic.action.get.showcase_show,
+            'ckanext_showcase_list':
+                ckanext.showcase.logic.action.get.showcase_list,
+            'ckanext_showcase_package_association_create':
+                ckanext.showcase.logic.action.create.showcase_package_association_create,
+            'ckanext_showcase_package_association_delete':
+                ckanext.showcase.logic.action.delete.showcase_package_association_delete,
+            'ckanext_showcase_package_list':
+                ckanext.showcase.logic.action.get.showcase_package_list,
+            'ckanext_package_showcase_list':
+                ckanext.showcase.logic.action.get.package_showcase_list,
+            'ckanext_showcase_admin_add':
+                ckanext.showcase.logic.action.create.showcase_admin_add,
+            'ckanext_showcase_admin_remove':
+                ckanext.showcase.logic.action.delete.showcase_admin_remove,
+            'ckanext_showcase_admin_list':
+                ckanext.showcase.logic.action.get.showcase_admin_list,
+            'ckanext_showcase_upload':
+                ckanext.showcase.logic.action.create.showcase_upload,
+        }
+        return action_functions
+>>>>>>> bd1fd3c (Add upload feature for CKEditor content):ckanext/showcase/plugin.py
 
     # IPackageController
 

@@ -1,4 +1,5 @@
 import logging
+import json
 
 
 from ckan.plugins import toolkit as tk
@@ -124,4 +125,57 @@ class ShowcaseController(PackageController):
         return utils.manage_showcase_admins()
 
     def remove_showcase_admin(self):
+<<<<<<< HEAD
         return utils.remove_showcase_admin()
+=======
+        '''
+        Remove a user from the Showcase Admin list.
+        '''
+        context = {'model': model, 'session': model.Session,
+                   'user': c.user or c.author}
+
+        try:
+            check_access('sysadmin', context, {})
+        except NotAuthorized:
+            abort(401, _('User not authorized to view page'))
+
+        if 'cancel' in request.params:
+            tk.redirect_to(
+                controller='ckanext.showcase.controller:ShowcaseController',
+                action='manage_showcase_admins')
+
+        user_id = request.params['user']
+        if request.method == 'POST' and user_id:
+            user_id = request.params['user']
+            try:
+                get_action('ckanext_showcase_admin_remove')(
+                    data_dict={'username': user_id})
+            except NotAuthorized:
+                abort(401, _('Unauthorized to perform that action'))
+            except NotFound:
+                h.flash_error(_('The user is not a Showcase Admin'))
+            else:
+                h.flash_success(_('The user is no longer a Showcase Admin'))
+
+            return redirect(h.url_for(
+                controller='ckanext.showcase.controller:ShowcaseController',
+                action='manage_showcase_admins'))
+
+        c.user_dict = get_action('user_show')(data_dict={'id': user_id})
+        c.user_id = user_id
+        return render('admin/confirm_remove_showcase_admin.html')
+
+    def showcase_upload(self):
+        if not tk.request.method == 'POST':
+            tk.abort(409, _('Only Posting is availiable'))
+
+        try:
+            url = tk.get_action('ckanext_showcase_upload')(
+                None,
+                dict(tk.request.POST)
+                )
+        except tk.NotAuthorized:
+            tk.abort(401, _('Unauthorized to upload file %s') % id)
+
+        return json.dumps(url)
+>>>>>>> bd1fd3c (Add upload feature for CKEditor content)

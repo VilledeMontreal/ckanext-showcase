@@ -6,8 +6,14 @@
 {% block subtitle %}{{ pkg.title or pkg.name }} - {{ _('Showcases') }}{% endblock %}
 
 {% block styles %}
+<<<<<<< HEAD
     {{ super() }}
     <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+=======
+  {{ super() }}
+  <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+  <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
+>>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
 {% endblock %}
 
 {% block links -%}
@@ -41,9 +47,46 @@
 {% endblock %}
 
 {% block primary_content_inner %}
+<<<<<<< HEAD
     {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
         <div class="actions">
             {% link_for _('Manage'), named_route='showcase_edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
+=======
+  {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
+    <div class="actions">
+    {% link_for _('Manage'), controller='ckanext.showcase.controller:ShowcaseController', action='edit', id=pkg.name, class_='btn', icon='wrench' %}
+    </div>
+  {% endif %}
+  {% block package_description %}
+    {% if pkg.private %}
+      <span class="dataset-private label label-inverse pull-right">
+        <i class="fa fa-lock icon-lock"></i>
+        {{ _('Private') }}
+      </span>
+    {% endif %}
+    <h1>
+      {% block page_heading %}
+        {{ name }}
+        {% if pkg.state.startswith('draft') %}
+          [{{ _('Draft') }}]
+        {% endif %}
+      {% endblock %}
+    </h1>
+
+    {% if pkg.image_display_url %}
+      <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
+    {% endif %}
+
+    {% block package_notes %}
+      {% set editor = h.get_wysiwyg_editor() %}
+      {% if pkg.showcase_notes_formatted and editor == 'ckeditor' %}
+        <div class="ck-content">
+          {{ pkg.showcase_notes_formatted|safe }}
+        </div>
+      {% elif pkg.showcase_notes_formatted %}
+        <div class="notes embedded-content ckanext-showcase-notes">
+          {{ pkg.showcase_notes_formatted }}
+>>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
         </div>
     {% endif %}
     {% block package_description %}

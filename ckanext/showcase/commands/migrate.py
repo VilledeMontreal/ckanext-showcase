@@ -65,9 +65,12 @@ class MigrationCommand(CkanCommand):
         if cmd == 'migrate':
             self.migrate()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         elif cmd == 'make_related':
             self.make_related()
+=======
+>>>>>>> a253115 (Remove non-valid command)
         elif cmd == 'markdown_to_html':
             self.markdown_to_html()
 >>>>>>> 8f6d4c5 (Add test to migrate notes from markdown to html)

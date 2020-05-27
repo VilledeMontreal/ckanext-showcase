@@ -189,4 +189,8 @@ migration can continue. Please correct and try again:"""
                     'notes': render_markdown(showcase['notes'])
                 }
             )
+<<<<<<< HEAD
 >>>>>>> 8f6d4c5 (Add test to migrate notes from markdown to html)
+=======
+        print('All notes were migrated successfully.')
+>>>>>>> a8d5f42 (Add print statement to the markdown_to_html command)

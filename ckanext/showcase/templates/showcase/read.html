@@ -2,6 +2,7 @@
 
 {% set pkg = pkg_dict or c.pkg_dict %}
 {% set name = pkg.title or pkg.name %}
+{% set editor = h.get_wysiwyg_editor() %}
 
 {% block subtitle %}{{ pkg.title or pkg.name }} - {{ _('Showcases') }}{% endblock %}
 
@@ -12,8 +13,14 @@
 =======
   {{ super() }}
   <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
 >>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
+=======
+  {% if editor == 'ckeditor' %}
+    <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
+  {% endif %}
+>>>>>>> 5112a66 (Only load css if CKEditor is set)
 {% endblock %}
 
 {% block links -%}
@@ -78,7 +85,6 @@
     {% endif %}
 
     {% block package_notes %}
-      {% set editor = h.get_wysiwyg_editor() %}
       {% if pkg.showcase_notes_formatted and editor == 'ckeditor' %}
         <div class="ck-content">
           {{ pkg.showcase_notes_formatted|safe }}

@@ -5,8 +5,13 @@
 {% block subtitle %}{{ _('Showcases') }}{% endblock %}
 
 {% block styles %}
+<<<<<<< HEAD
     {{ super() }}
     <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+=======
+  {{ super() }}
+  {% resource "showcase/ckanext_showcase.css" %}
+>>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
 {% endblock %}
 
 {% block breadcrumb_content_selected %}{% endblock %}

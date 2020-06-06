@@ -12,13 +12,17 @@
     <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
 =======
   {{ super() }}
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
 <<<<<<< HEAD
   <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
 >>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
 =======
+=======
+  {% resource "showcase/ckanext_showcase.css" %}
+>>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
   {% if editor == 'ckeditor' %}
-    <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
+    {% resource "showcase/ckeditor-content-style.css" %}
   {% endif %}
 >>>>>>> 5112a66 (Only load css if CKEditor is set)
 {% endblock %}

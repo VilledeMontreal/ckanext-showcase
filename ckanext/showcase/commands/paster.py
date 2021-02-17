@@ -1,3 +1,4 @@
+<<<<<<< HEAD:ckanext/showcase/commands/migrate.py
 <<<<<<< HEAD
 from __future__ import print_function
 =======
@@ -18,6 +19,17 @@ import ckanext.showcase.utils as utils
 
 
 log = logging.getLogger(__name__)
+=======
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+
+from ckan.lib.cli import CkanCommand
+
+from ckanext.showcase import utils
+
+# Paster commands for CKAN 2.8 and below
+>>>>>>> ac2dfe9 (Refactor cli tools):ckanext/showcase/commands/paster.py
 
 
 class MigrationCommand(CkanCommand):
@@ -180,6 +192,7 @@ migration can continue. Please correct and try again:"""
             return title
 
     def markdown_to_html(self):
+<<<<<<< HEAD:ckanext/showcase/commands/migrate.py
         ''' Migrates the notes of all showcases from markdown to html.
 
         When using CKEditor, notes on showcases are stored in html instead of
@@ -213,3 +226,6 @@ migration can continue. Please correct and try again:"""
 =======
         print('All notes were migrated successfully.')
 >>>>>>> a8d5f42 (Add print statement to the markdown_to_html command)
+=======
+        utils.markdown_to_html()
+>>>>>>> ac2dfe9 (Refactor cli tools):ckanext/showcase/commands/paster.py

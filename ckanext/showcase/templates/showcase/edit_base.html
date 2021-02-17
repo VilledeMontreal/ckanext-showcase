@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
 =======
   {{ super() }}
+<<<<<<< HEAD
   {% resource "showcase/ckanext_showcase.css" %}
 >>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
+=======
+  {% asset "showcase/ckanext-showcase-css" %}
+>>>>>>> d540125 (Fix webassets)
 {% endblock %}
 
 {% block breadcrumb_content_selected %}{% endblock %}

@@ -41,7 +41,6 @@ install:
 >>>>>>> f4e5e0f (Fix travis config)
 services:
     - redis
-    - postgresql
     - docker
 
 install: bash bin/travis-build.bash
@@ -67,6 +66,8 @@ jobs:
         # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
         # - flake8 . --count --max-line-length=127 --statistics --exclude ckan --exit-zero
 
+
+    - stage: Tests
     - python: "3.6"
       env: CKANVERSION=master
       services:
@@ -81,7 +82,6 @@ jobs:
           - redis
           - docker
 
-    - stage: Tests
       python: "2.7"
       env: CKANVERSION=master
       services:

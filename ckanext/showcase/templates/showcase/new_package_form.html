@@ -40,6 +40,7 @@
 =======
         {% if editor == 'ckeditor' %}
 <<<<<<< HEAD
+<<<<<<< HEAD
           {% resource 'showcase/dist/ckeditor.js' %}
           {% resource 'showcase/js/showcase-ckeditor.js' %}
 <<<<<<< HEAD
@@ -53,6 +54,10 @@
 =======
           {% asset 'showcase/ckeditor' %}
 >>>>>>> d540125 (Fix webassets)
+=======
+          {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
+          {% snippet 'showcase/snippets/ckeditor_' ~ _type ~ '.html' %}
+>>>>>>> 30db71e (Add snippet logic for backward compatibility)
           {%
             set ckeditor_attrs = {
               'data-module': 'showcase-ckeditor',

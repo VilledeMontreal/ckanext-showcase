@@ -11,11 +11,16 @@
 =======
   {{ super() }}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {% resource "showcase/ckanext_showcase.css" %}
 >>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
 =======
   {% asset "showcase/ckanext-showcase-css" %}
 >>>>>>> d540125 (Fix webassets)
+=======
+  {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
+  {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
+>>>>>>> 3b31a35 (Add snippets for backward compatibility)
 {% endblock %}
 
 {% block breadcrumb_content_selected %}{% endblock %}

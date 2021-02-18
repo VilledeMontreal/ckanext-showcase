@@ -42,6 +42,7 @@ install:
 services:
     - redis
     - postgresql
+    - docker
 
 install: bash bin/travis-build.bash
 script: bash bin/travis-run.bash

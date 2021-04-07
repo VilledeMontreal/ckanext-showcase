@@ -1,4 +1,4 @@
-ckanext-odata
+ckanext-showcase
 Original program modified by Keitaro AB
 Copyright (c) 2016 Keitaro AB
 
@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 **********************************************************************************************
 
-ckanext-odata
+ckanext-showcase
 forked from https://github.com/ckan/ckanext-showcase
 See original forked repository for contributors and copyright information
 

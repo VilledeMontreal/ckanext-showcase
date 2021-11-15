@@ -33,7 +33,6 @@
     margin-bottom: 25px;
 }
 
-
 td.ckanext_showcase_pagination_footer {
     padding: 0;
 }
@@ -48,4 +47,7 @@ td.ckanext_showcase_pagination_footer {
 
 .ck-editor__editable_inline {
     min-height: 200px;
+
+.media-image {
+  max-width: 100%;
 }

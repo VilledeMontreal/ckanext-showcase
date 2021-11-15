@@ -1,161 +1,169 @@
-# Translations template for ckanext-showcase.
+# Albanian translations for ckanext-showcase.
 # Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the ckanext-showcase
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-showcase 1.0.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2018-07-23 14:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2018-08-07 23:57+0200\n"
+"Last-Translator: \n"
+"Language: sq\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ckanext/showcase/controller.py:55
 msgid "Unauthorized to create a package"
-msgstr ""
+msgstr "I paautorizuar të krijoni setin e të dhënave"
 
 #: ckanext/showcase/controller.py:70 ckanext/showcase/controller.py:266
 msgid "User not authorized to edit {showcase_id}"
-msgstr ""
+msgstr "Përdoruesi nuk është i autorizuar për të redaktuar{showcase_id}"
 
 #: ckanext/showcase/controller.py:146 ckanext/showcase/controller.py:183
 #: ckanext/showcase/controller.py:223 ckanext/showcase/controller.py:237
 #: ckanext/showcase/controller.py:273
 msgid "Showcase not found"
-msgstr ""
+msgstr "Aplikimi nuk u gjet"
 
 #: ckanext/showcase/controller.py:148 ckanext/showcase/controller.py:275
 msgid "Unauthorized to read showcase"
-msgstr ""
+msgstr "I paautorizuar për të lexuar aplikacionin"
 
 #: ckanext/showcase/controller.py:170 ckanext/showcase/controller.py:181
 msgid "Unauthorized to delete showcase"
-msgstr ""
+msgstr "I paautorizuar për tA fshirë aplikacionin"
 
 #: ckanext/showcase/controller.py:175
 msgid "Showcase has been deleted."
-msgstr ""
+msgstr "Aplikacioni është fshirë."
 
 #: ckanext/showcase/controller.py:200 ckanext/showcase/controller.py:209
 msgid "Dataset not found"
-msgstr ""
+msgstr "Seti i të dhënave nuk u gjet"
 
 #: ckanext/showcase/controller.py:202
 msgid "Not authorized to see this page"
-msgstr ""
+msgstr "Ju nuk jeni i autorizuar për ta parë këtë faqe"
 
 #: ckanext/showcase/controller.py:211
 msgid "Unauthorized to read package"
-msgstr ""
+msgstr "I paautorizuar ta lexoni setin e të dhënave"
 
 #: ckanext/showcase/controller.py:226 ckanext/showcase/controller.py:328
 msgid "The dataset has been added to the showcase."
 msgid_plural "The datasets have been added to the showcase."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Seti i të dhënave është shtuar në aplikacion."
+msgstr[1] "Setet i të dhënave janë shtuar në aplikacion."
 
 #: ckanext/showcase/controller.py:240 ckanext/showcase/controller.py:296
 msgid "The dataset has been removed from the showcase."
 msgid_plural "The datasets have been removed from the showcase."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Seti i të dhënave është hequr nga aplikacioni."
+msgstr[1] "Setet i të dhënave janë hequr nga aplikacioni"
 
 #: ckanext/showcase/controller.py:464
 msgid "Organizations"
-msgstr ""
+msgstr "Organizatat"
 
 #: ckanext/showcase/controller.py:465
 msgid "Groups"
-msgstr ""
+msgstr "Grupet"
 
 #: ckanext/showcase/controller.py:466 ckanext/showcase/plugin.py:136
 #: ckanext/showcase/templates/showcase/new_package_form.html:33
 msgid "Tags"
-msgstr ""
+msgstr "Tags-at"
 
 #: ckanext/showcase/controller.py:467
 msgid "Formats"
-msgstr ""
+msgstr "Formate"
 
 #: ckanext/showcase/controller.py:468
 msgid "Licenses"
-msgstr ""
+msgstr "Licencat"
 
 #: ckanext/showcase/controller.py:526
 msgid "Parameter '{parameter_name}' is not an integer"
-msgstr ""
+msgstr "Parametri  '{parameter_name}' nuk është një numër i plotë"
 
 #: ckanext/showcase/controller.py:541 ckanext/showcase/controller.py:577
 msgid "User not authorized to view page"
-msgstr ""
+msgstr "Përdoruesi nuk është i autorizuar për ta shikuar këtë faqe"
 
 #: ckanext/showcase/controller.py:550 ckanext/showcase/controller.py:591
 msgid "Unauthorized to perform that action"
-msgstr ""
+msgstr "I paautorizuar për ta kryer këtë veprim"
 
 #: ckanext/showcase/controller.py:552
 msgid "User '{user_name}' not found."
-msgstr ""
+msgstr "Përdoruesi '{user_name}' nuk u gjet."
 
 #: ckanext/showcase/controller.py:557
 msgid "The user is now a Showcase Admin"
-msgstr ""
+msgstr "Përdoruesi tani është administrues i aplikacioneve"
 
 #: ckanext/showcase/controller.py:593
 msgid "The user is not a Showcase Admin"
-msgstr ""
+msgstr "Përdoruesi nuk është një administrues i aplikacioneve"
 
 #: ckanext/showcase/controller.py:595
 msgid "The user is no longer a Showcase Admin"
-msgstr ""
+msgstr "Përdoruesi nuk është më një administrues i aplikacioneve"
 
 #: ckanext/showcase/plugin.py:82
 msgid "Showcase Config"
-msgstr ""
+msgstr "Konfigurimi i aplikacionit"
 
-#: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
+#: ckanext/showcase/logic/converters.py:24
+#: ckanext/showcase/logic/validators.py:29
 msgid "Not found"
-msgstr ""
+msgstr "Nuk u gjet"
 
-#: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
+#: ckanext/showcase/logic/converters.py:24
+#: ckanext/showcase/logic/validators.py:29
 msgid "Dataset"
-msgstr ""
+msgstr "Seti i të dhënave"
 
 #: ckanext/showcase/logic/action/create.py:71
 msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "already exists."
 msgstr ""
+"ShowcasePackageAssociation me package_id '{0}' dhe showcase_id '{1}' tani më "
+"ekziston."
 
 #: ckanext/showcase/logic/action/create.py:72
 msgid "The dataset, {0}, is already in the showcase"
-msgstr ""
+msgstr "Seti i të dhënave, {0}, është tani më në aplikacion"
 
 #: ckanext/showcase/logic/action/create.py:102
 msgid "ShowcaseAdmin with user_id '{0}' already exists."
-msgstr ""
+msgstr "ShowcaseAdmin with user_id '{0}' tani më ekziston."
 
 #: ckanext/showcase/logic/action/create.py:103
 msgid "User '{0}' is already a Showcase Admin."
-msgstr ""
+msgstr "Përdoruesi '{0}' është tani më një administrues i aplikacioneve"
 
 #: ckanext/showcase/logic/action/delete.py:70
 msgid ""
 "ShowcasePackageAssociation with package_id '{0}' and showcase_id '{1}' "
 "doesn't exist."
 msgstr ""
+"ShowcasePackageAssociation me package_id '{0}' edhe showcase_id '{1}' nuk "
+"ekziston."
 
 #: ckanext/showcase/logic/action/delete.py:102
 msgid "ShowcaseAdmin with user_id '{0}' doesn't exist."
-msgstr ""
+msgstr "ShowcaseAdmin with user_id '{0}' nuk ekziston."
 
 #: ckanext/showcase/templates/header.html:6
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:3
@@ -168,305 +176,315 @@ msgstr ""
 #: ckanext/showcase/templates/showcase/search.html:4
 #: ckanext/showcase/templates/showcase/search.html:7
 msgid "Showcases"
-msgstr ""
+msgstr "Aplikimet"
 
 #: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:3
 #: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:16
 msgid "Confirm Remove"
-msgstr ""
+msgstr "Konfirmo Hiqni"
 
 #: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:11
 msgid "Are you sure you want to remove this user as a Showcase Admin - {name}?"
 msgstr ""
+"A jeni i sigurt se dëshironi ta largoni këtë përdorues si një administrues I "
+"aplikacioneve- {emri}?"
 
 #: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:15
 #: ckanext/showcase/templates/showcase/confirm_delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Anuloj"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:9
 msgid "Manage Showcase Admins"
-msgstr ""
+msgstr "Menaxho administruesit e aplikacioneve"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:16
 msgid "Add an Existing User"
-msgstr ""
+msgstr "Shto një përdorues ekzistues"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:19
-msgid "To make an existing user a Showcase Admin, search for their username below."
+msgid ""
+"To make an existing user a Showcase Admin, search for their username below."
 msgstr ""
+"Për të bërë një përdorues ekzistues një administrues të aplikacioneve, kërko "
+"për emrin e përdoruesit në vijim."
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:23
 msgid "Username"
-msgstr ""
+msgstr "Emri i përdoruesit"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:32
 msgid "Add User"
-msgstr ""
+msgstr "Shto përdorues"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:38
 msgid "Showcase Admins"
-msgstr ""
+msgstr "Administruesit e aplikacionit"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:43
 msgid "User"
-msgstr ""
+msgstr "Përdorues"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:51
 msgid "Are you sure you want to remove this user from the Showcase Admin list?"
 msgstr ""
+"A jeni i sigurt se dëshironi ta largoni këtë përdorues nga lista e "
+"administratruesve të aplikacionit?"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:53
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
 msgid "Remove"
-msgstr ""
+msgstr "Hiqni"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:61
 msgid "There are currently no Showcase Admins."
-msgstr ""
+msgstr "Aktualisht nuk ka administrues të aplikacioneve."
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:69
 msgid ""
-" <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can add"
-" and remove datasets from showcases.</p> "
+" <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can "
+"add and remove datasets from showcases.</p> "
 msgstr ""
+"<p> <strong> Administruesi i aplikacionit: </ strong> Mund të krijojë dhe të "
+"heqë aplikacione. Mund të shtoni dhe hiqni Setin e të dhënave nga "
+"aplikacionet. </ P>"
 
 #: ckanext/showcase/templates/home/snippets/stats.html:5
 msgid "{site_title} statistics"
-msgstr ""
+msgstr "{site_title} statistikat"
 
 #: ckanext/showcase/templates/home/snippets/stats.html:10
 msgid "dataset"
 msgid_plural "datasets"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Seti i të dhënave"
+msgstr[1] "Setet i të dhënave"
 
 #: ckanext/showcase/templates/home/snippets/stats.html:16
 msgid "organization"
 msgid_plural "organizations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Organizata"
+msgstr[1] "organizatat"
 
 #: ckanext/showcase/templates/home/snippets/stats.html:22
 msgid "group"
 msgid_plural "groups"
-msgstr[0] ""
+msgstr[0] "grup"
 msgstr[1] ""
 
 #: ckanext/showcase/templates/home/snippets/stats.html:28
 msgid "showcase"
 msgid_plural "showcases"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aplikacion"
+msgstr[1] "Aplikimet"
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:13
 msgid "Associate this showcase with this dataset"
-msgstr ""
+msgstr "Lidhni këtë aplikacion me këtë seti të të dhënave"
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:13
 msgid "Add to showcase"
-msgstr ""
+msgstr "Shto në aplikacion"
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:17
 msgid "Showcases featuring {dataset_name}"
-msgstr ""
+msgstr "Veçoritë e aplikacionit {dataset_name}"
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:22
 msgid "There are no showcases that feature this dataset"
-msgstr ""
+msgstr "Nuk ka aplikacione që veçojnë Setin e të dhënave"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:3
 msgid "Showcases - Add datasets"
-msgstr ""
+msgstr "Aplikimi - Shto Setin e të dhënave"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:21
 #: ckanext/showcase/templates/showcase/manage_datasets.html:24
 #: ckanext/showcase/templates/showcase/search.html:34
 msgid "Relevance"
-msgstr ""
+msgstr "Lidhje (Relevante)"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:22
 #: ckanext/showcase/templates/showcase/manage_datasets.html:25
 #: ckanext/showcase/templates/showcase/search.html:35
 msgid "Name Ascending"
-msgstr ""
+msgstr "Emri në ngjitje"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:23
 #: ckanext/showcase/templates/showcase/manage_datasets.html:26
 #: ckanext/showcase/templates/showcase/search.html:36
 msgid "Name Descending"
-msgstr ""
+msgstr "Emri në rënie"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:24
 #: ckanext/showcase/templates/showcase/manage_datasets.html:27
 #: ckanext/showcase/templates/showcase/search.html:37
 msgid "Last Modified"
-msgstr ""
+msgstr "Modifikimet e fundit"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:25
 #: ckanext/showcase/templates/showcase/manage_datasets.html:28
 #: ckanext/showcase/templates/showcase/search.html:38
 msgid "Popular"
-msgstr ""
+msgstr "Popullor (I njohur)"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:31
 #: ckanext/showcase/templates/showcase/manage_datasets.html:36
 msgid "Datasets available to add to this showcase"
-msgstr ""
+msgstr "Setet e të dhënave  janë në dispozicion për t'i shtuar në këtë aplikim"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:48
 #: ckanext/showcase/templates/showcase/manage_datasets.html:51
 msgid "Add to Showcase"
-msgstr ""
+msgstr "Shto në aplikacion"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:78
 #: ckanext/showcase/templates/showcase/manage_datasets.html:88
 msgid "No datasets could be found"
-msgstr ""
+msgstr "Asnjë set i të dhënave nuk mund të gjendet"
 
 #: ckanext/showcase/templates/showcase/confirm_delete.html:3
 #: ckanext/showcase/templates/showcase/confirm_delete.html:15
 msgid "Confirm Delete"
-msgstr ""
+msgstr "Konfirmo fshirjen"
 
 #: ckanext/showcase/templates/showcase/confirm_delete.html:11
 msgid "Are you sure you want to delete showcase - {showcase_name}?"
-msgstr ""
+msgstr "A jeni i sigurtë se doni ta fshini aplikacionin- {showcase_name}?"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:14
 msgid "Edit"
-msgstr ""
+msgstr "Redakto"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:17
 #: ckanext/showcase/templates/showcase/new.html:3
 #: ckanext/showcase/templates/showcase/new_package_form.html:63
 msgid "Create Showcase"
-msgstr ""
+msgstr "Krijo një aplikacionin"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:37
 msgid "View showcase"
-msgstr ""
+msgstr "Shiko aplikacionin"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:43
 msgid "Edit showcase"
-msgstr ""
+msgstr "Redakto aplikacionin"
 
 #: ckanext/showcase/templates/showcase/edit_base.html:44
 msgid "Manage datasets"
-msgstr ""
+msgstr "Menaxho setet e të dhënave"
 
 #: ckanext/showcase/templates/showcase/manage_datasets.html:3
 msgid "Showcases - Manage datasets"
-msgstr ""
+msgstr "Aplikimet - Menaxho setet e të dhënave"
 
 #: ckanext/showcase/templates/showcase/manage_datasets.html:96
 msgid "Datasets in this showcase"
-msgstr ""
+msgstr "Setet e të dhënave në këtë aplikacion"
 
 #: ckanext/showcase/templates/showcase/manage_datasets.html:109
 msgid "Remove from Showcase"
-msgstr ""
+msgstr "Fshini nga aplikacioni"
 
 #: ckanext/showcase/templates/showcase/manage_datasets.html:140
 msgid "This showcase has no datasets associated to it"
-msgstr ""
+msgstr "Ky aplikacion nuk ka ndonjë set të të dhënave të bashkangjitur me të"
 
 #: ckanext/showcase/templates/showcase/new.html:8
 msgid "Create a Showcase"
-msgstr ""
+msgstr "Krijo një aplikacionin"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:15
 msgid "Title"
-msgstr ""
+msgstr "Titulli"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:15
 msgid "eg. A descriptive title"
-msgstr ""
+msgstr "p.sh. Një titull përshkrues"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:24
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:24
 msgid "eg. my-showcase"
-msgstr ""
+msgstr "p.sh.aplikimi-im"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:28
 msgid "Description"
-msgstr ""
+msgstr "Përshkrimi"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:28
 msgid "eg. Some useful notes about the data"
-msgstr ""
+msgstr "p.sh. Disa shënime të dobishme rreth të dhënave"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:33
 msgid "eg. economy, mental health, government"
-msgstr ""
+msgstr "p.sh. ekonomia, shëndeti mendor, qeveria"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:44
 msgid "External link"
-msgstr ""
+msgstr "Linqet (lidhjet) e jashtme"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:44
 msgid "http://www.example.com"
-msgstr ""
+msgstr "http://www.shembull.com"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:48
 msgid "Submitted By"
-msgstr ""
+msgstr "Parashtruar nga"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:48
 msgid "Joe Bloggs"
-msgstr ""
+msgstr "Joe Bloggs"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:50
 msgid "Submitter Email"
-msgstr ""
+msgstr "Email"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:50
 msgid "joe@example.com"
-msgstr ""
+msgstr "joe@shembull.com"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:58
 msgid "Are you sure you want to delete this showcase?"
-msgstr ""
+msgstr "A jeni i sigurtë se dëshironi ta fshini këtë aplikacion"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:59
 msgid "Delete"
-msgstr ""
+msgstr "Fshij"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:63
 msgid "Update Showcase"
-msgstr ""
+msgstr "Përditëso aplikacionin"
 
 #: ckanext/showcase/templates/showcase/read.html:41
 msgid "Manage"
-msgstr ""
+msgstr "Menaxho"
 
 #: ckanext/showcase/templates/showcase/read.html:48
 msgid "Private"
-msgstr ""
+msgstr "Privat"
 
 #: ckanext/showcase/templates/showcase/read.html:55
 msgid "Draft"
-msgstr ""
+msgstr "Draft"
 
 #: ckanext/showcase/templates/showcase/read.html:73
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:27
 msgid "Launch website"
-msgstr ""
+msgstr "Hapni faqen e internetit"
 
 #: ckanext/showcase/templates/showcase/search.html:20
 msgid "Add Showcase"
-msgstr ""
+msgstr "Shto në aplikacion"
 
 #: ckanext/showcase/templates/showcase/search.html:40
 msgid "Search showcases..."
-msgstr ""
+msgstr "Kërkimi i aplikacioneve..."
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:4
 msgid "What are Showcases?"
-msgstr ""
+msgstr "Çka janë aplikacionet?"
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:8
 msgid ""
@@ -475,6 +493,11 @@ msgid ""
 "Showcases collect together the best examples of datasets in use, to provide "
 "further insight, ideas, and inspiration."
 msgstr ""
+"Setet të dhënave janë përdorur për të ndërtuar aplikacione, faqe interneti "
+"dhe vizualizime. Ata janë paraqitur në artikuj, dhe janë shkruar në raportet "
+"e lajmeve dhe postimet në blog. Aplikacionet mbledhin së bashku shembujt më "
+"të mirë të seteve të të dhënave në përdorim, për të siguruar njohuri të "
+"mëtejshme, ide dhe frymëzim."
 
 #: ckanext/showcase/templates/showcase/snippets/helper.html:12
 #, python-format
@@ -482,59 +505,66 @@ msgid ""
 "Sysadmins can manage Showcase Admins from the <a href='%(url)s'>Showcase "
 "configuration page</a>."
 msgstr ""
+"Sysadminët mund t'i menaxhojnë administratorët e aplikacioneve nga  <a "
+"href='%(url)s'> Faqja e konfigurimit të aplikacioneve."
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
 msgid "Submitted by"
-msgstr ""
+msgstr "Parashtruar nga"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:37
 msgid "Datasets in Showcase"
-msgstr ""
+msgstr "Setet e të dhënave në aplikacion"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:47
 msgid "There are no Datasets in this Showcase"
-msgstr ""
+msgstr "Nuk ka setet të të dhënave në  këtë aplikacion"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:30
 msgid "This showcase has no description"
-msgstr ""
+msgstr "Ky aplikacion nuk ka përshkrim"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:35
 msgid "{num} Dataset"
 msgid_plural "{num} Datasets"
-msgstr[0] ""
+msgstr[0] "{num} Seti i të dhënave"
 msgstr[1] ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:37
 msgid "0 Datasets"
-msgstr ""
+msgstr "0  Setet e të dhënave"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:41
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:42
 msgid "View {showcase_title}"
-msgstr ""
+msgstr "Shiko {showcase_title}"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
 msgid "Remove dataset from this showcase"
-msgstr ""
+msgstr "Fshini setin e të dhënave nga ky aplikacion"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:7
 msgid "{number} showcase found for '{query}'"
 msgid_plural "{number} showcases found for '{query}'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aplikacioni {number} u gjet për '{query}'"
+msgstr[1] "{number} aplikacioneve të gjetura për '{query}'"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:8
 msgid "No showcases found for '{query}'"
-msgstr ""
+msgstr "Nuk u gjetën aplikacione për '{query}'"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:9
 msgid "{number} showcase found"
 msgid_plural "{number} showcases found"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "u gjet {number} aplikim"
+msgstr[1] "u gjetën {number} aplikacione"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:10
 msgid "No showcases found"
-msgstr ""
+msgstr "Nuk u gjetën aplikacione"
 
+#~ msgid "Datasets"
+#~ msgstr "Setet i të dhënave"
+
+#~ msgid "About"
+#~ msgstr "Për"

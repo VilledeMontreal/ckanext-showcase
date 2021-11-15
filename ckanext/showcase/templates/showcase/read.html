@@ -20,6 +20,7 @@
   {% endif %}
 {% endblock %}
 
+
 {% block links -%}
     {{ super() }}
     <link rel="alternate" type="application/rdf+xml" href="{{ h.url_for(showcase_read_route, id=pkg.id, format='rdf', qualified=True) }}"/>
@@ -100,6 +101,8 @@
 
     {% block package_search_results_list %}
     {% endblock %}
+
+  {{ h.disqus_comments() }}
 
 {% endblock %}
 

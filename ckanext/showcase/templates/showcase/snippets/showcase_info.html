@@ -34,7 +34,7 @@ Example:
         </section>
 
         <section class="module module-narrow">
-            <h3 class="module-heading"><i class="fa fa-sitemap icon-medium icon-sitemap"></i> {{ _('Datasets in Showcase') }}</h2>
+            <h3 class="module-heading"><i class="fa fa-sitemap icon-medium icon-sitemap"></i> {{ _('Datasets in Showcase') }}</h3>
                 {% if showcase_pkgs %}
                     <ul class="nav nav-simple">
                         {% for package in showcase_pkgs %}
@@ -48,4 +48,5 @@ Example:
                 {% endif %}
         </section>
     {% endif %}
+
 {% endblock %}

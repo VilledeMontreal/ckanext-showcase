@@ -23,6 +23,12 @@ import ckanext.showcase.logic.schema as showcase_schema
 import ckanext.showcase.logic.helpers as showcase_helpers
 from ckanext.showcase.model import setup as model_setup
 
+try:
+    from ckan.lib.plugins import DefaultTranslation
+except ImportError:
+    class DefaultTranslation():
+        pass
+
 if tk.check_ckan_version(u'2.9'):
     from ckanext.showcase.plugin.flask_plugin import MixinPlugin
 else:
@@ -37,7 +43,7 @@ DATASET_TYPE_NAME = utils.DATASET_TYPE_NAME
 
 
 class ShowcasePlugin(
-        MixinPlugin, plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm):
+        MixinPlugin, plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, DefaultTranslation):
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IDatasetForm)
@@ -46,6 +52,15 @@ class ShowcasePlugin(
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITranslation, inherit=True)
+
+    # ITranslation
+    def i18n_directory(self):
+        u'''Change the directory of the .mo translation files'''
+        return os.path.join(
+            os.path.dirname(__file__),
+            '../i18n'
+        )
 
     # IConfigurer
 

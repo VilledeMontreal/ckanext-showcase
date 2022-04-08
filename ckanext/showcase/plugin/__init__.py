@@ -45,12 +45,7 @@ class ShowcasePlugin(
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
-
-    # ITranslation only available in 2.5+
-    try:
-        plugins.implements(plugins.ITranslation)
-    except AttributeError:
-        pass
+    plugins.implements(plugins.ITranslation)
 
     # IConfigurer
 
@@ -67,8 +62,12 @@ class ShowcasePlugin(
         if tk.check_ckan_version(min_version='2.4'):
 =======
         tk.add_resource('../fanstatic', 'showcase')
+<<<<<<< HEAD
         if tk.check_ckan_version(min_version='2.4', max_version='2.9.0'):
 >>>>>>> 1e1a6f1 (More new style routes)
+=======
+        if tk.check_ckan_version(min_version='2.7', max_version='2.9.0'):
+>>>>>>> cca3a57 (Rename deprecated request.params)
             tk.add_ckan_admin_tab(config, 'showcase_admins',
                                   'Showcase Config')
         elif tk.check_ckan_version(min_version='2.9.0'):
@@ -336,11 +335,6 @@ class ShowcasePlugin(
             return search_params
 
     # ITranslation
-
-    # The following methods copied from ckan.lib.plugins.DefaultTranslation so
-    # we don't have to mix it into the class. This means we can use Showcase
-    # even if ITranslation isn't available (less than 2.5).
-
     def i18n_directory(self):
         '''Change the directory of the *.mo translation files
 

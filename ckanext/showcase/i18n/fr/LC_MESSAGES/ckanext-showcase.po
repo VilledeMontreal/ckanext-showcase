@@ -406,7 +406,7 @@ msgstr "http://www.example.com"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:48
 msgid "Submitted By"
-msgstr "Créé par"
+msgstr "Soumise par"
 
 #: ckanext/showcase/templates/showcase/new_package_form.html:48
 msgid "Joe Bloggs"
@@ -484,7 +484,7 @@ msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
 msgid "Submitted by"
-msgstr "Créé par"
+msgstr "Soumise par"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:37
 msgid "Datasets in Showcase"

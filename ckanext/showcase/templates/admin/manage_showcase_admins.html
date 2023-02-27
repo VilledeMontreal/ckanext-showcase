@@ -69,9 +69,7 @@
   {{ super() }}
   <div class="module module-narrow module-shallow">
     <div class="module-content">
-      {% trans %}
-         <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can add and remove datasets from showcases.</p>
-      {% endtrans %}
+         <p><strong>{{ _('Showcase Admin:') }}</strong>{{ _('Can create and remove showcases. Can add and remove datasets from showcases.') }}</p>
     </div>
   </div>
 {% endblock %}

@@ -191,7 +191,7 @@ msgstr "Ajouter l'utilisateur"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:38
 msgid "Showcase Admins"
-msgstr "Administrateurs des réutilisations"
+msgstr "Administrateurs des applications"
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:43
 msgid "User"
@@ -544,3 +544,10 @@ msgstr "Aucune réutilisation trouvée"
 msgid "Showcases are any app, article or report that relate to the published dataset. For example, an annual report that contains aggregated information relating to the dataset or a website where there is further background information on the dataset or a link to an app that has been created utilising some or all of the dataset."
 msgstr "Cette galerie d’applications utilise les données ouvertes de la Ville de Montréal ou d’autres données provenant de partenaires de la Ville de Montréal. Ces applications citoyennes sont développées principalement par des concepteurs montréalais. La Ville de Montréal n’est pas responsable de ces applications citoyennes. Les auteurs respectifs sont garants de leur maintenance."
 
+#: ckanext-showcase/ckanext/showcase/templates/admin/manage_showcase_admins.html:73
+msgid "Can create and remove showcases. Can add and remove datasets from showcases."
+msgstr "des applications peut ajouter et supprimer des applications. Il peut également associer et dissocier des ensembles de données à une application."
+
+#: ckanext-showcase/ckanext/showcase/templates/admin/manage_showcase_admins.html:73
+msgid "Showcase Admin:"
+msgstr "Un administrateur "

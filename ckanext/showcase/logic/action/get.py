@@ -136,6 +136,7 @@ def package_showcase_list(context, data_dict):
     showcase_list = []
     if showcase_id_list is not None:
         for showcase_id in showcase_id_list:
+<<<<<<< HEAD
             try:
                 showcase = toolkit.get_action('package_show')(
                     context,
@@ -146,6 +147,11 @@ def package_showcase_list(context, data_dict):
                 log.error('Not authorized to access Package with ID: '
                           + str(showcase_id))
 
+=======
+            showcase = toolkit.get_action('package_show')(context,
+                                                          {'id': showcase_id})
+            showcase_list.append(showcase)
+>>>>>>> 2cc3e65 (run test against multiple CKAN versions)
     return showcase_list
 
 

@@ -154,6 +154,7 @@ def package_showcase_list(context, data_dict):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
             try:
@@ -176,12 +177,15 @@ def package_showcase_list(context, data_dict):
 >>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
 =======
             id_list.append(pkg_id[0])
+=======
+            id_list.append(showcase_id[0])
+>>>>>>> 62ff22b (Fix syntax errors)
 
         q = ' OR '.join(id_list)
         showcase_list = toolkit.get_action('package_search')(
             context,
             {'q': q, 'rows': 100})
-        showcase_list = pkg_list['results']
+        showcase_list = showcase_list['results']
 
 >>>>>>> ee7d155 (Batch list actions to a single query)
     return showcase_list

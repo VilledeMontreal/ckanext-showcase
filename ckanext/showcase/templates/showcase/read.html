@@ -12,12 +12,41 @@
 {% block subtitle %}{{ pkg.title or pkg.name }} - {{ _('Showcases') }}{% endblock %}
 
 {% block styles %}
+<<<<<<< HEAD
+    {{ super() }}
+    <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+=======
   {{ super() }}
+<<<<<<< HEAD
   {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
   {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
   {% if editor == 'ckeditor' %}
     {% snippet 'showcase/snippets/ckeditor_content_css_' ~ _type ~ '.html' %}
   {% endif %}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+<<<<<<< HEAD
+  <link rel="stylesheet" href="{{ g.site_url }}/ckeditor-content-style.css" type="text/css">
+>>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
+=======
+=======
+  {% resource "showcase/ckanext_showcase.css" %}
+>>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
+=======
+  {% asset "showcase/ckanext-showcase-css" %}
+>>>>>>> d540125 (Fix webassets)
+=======
+  {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
+  {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
+>>>>>>> 3b31a35 (Add snippets for backward compatibility)
+  {% if editor == 'ckeditor' %}
+    {% snippet 'showcase/snippets/ckeditor_content_css_' ~ _type ~ '.html' %}
+  {% endif %}
+>>>>>>> 5112a66 (Only load css if CKEditor is set)
+>>>>>>> dev
 {% endblock %}
 
 {% block links -%}
@@ -51,9 +80,69 @@
 {% endblock %}
 
 {% block primary_content_inner %}
+<<<<<<< HEAD
     {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
         <div class="actions">
             {% link_for _('Manage'), named_route=showcase_edit_route, id=pkg.name, class_='btn btn-default', icon='wrench' %}
+        </div>
+=======
+<<<<<<< HEAD
+    {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
+        <div class="actions">
+<<<<<<< HEAD
+            {% link_for _('Manage'), named_route='showcase_edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
+=======
+  {% if h.check_access('ckanext_showcase_update', {'id':pkg.id }) %}
+    <div class="actions">
+    {% link_for _('Manage'), controller='ckanext.showcase.controller:ShowcaseController', action='edit', id=pkg.name, class_='btn', icon='wrench' %}
+    </div>
+  {% endif %}
+  {% block package_description %}
+    {% if pkg.private %}
+      <span class="dataset-private label label-inverse pull-right">
+        <i class="fa fa-lock icon-lock"></i>
+        {{ _('Private') }}
+      </span>
+>>>>>>> dev
+    {% endif %}
+    {% block package_description %}
+        {% if pkg.private %}
+            <span class="dataset-private label label-inverse pull-right">
+                <i class="fa fa-lock icon-lock"></i>
+                {{ _('Private') }}
+            </span>
+        {% endif %}
+        <h1>
+            {% block page_heading %}
+                {{ name }}
+                {% if pkg.state.startswith('draft') %}
+                    [{{ _('Draft') }}]
+                {% endif %}
+            {% endblock %}
+        </h1>
+
+<<<<<<< HEAD
+        {% if pkg.image_display_url %}
+            <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
+        {% endif %}
+=======
+    {% if pkg.image_display_url %}
+      <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
+    {% endif %}
+>>>>>>> dev
+
+    {% block package_notes %}
+      {% if pkg.showcase_notes_formatted and editor == 'ckeditor' %}
+        <div class="ck-content">
+          {{ pkg.showcase_notes_formatted|safe }}
+        </div>
+      {% elif pkg.showcase_notes_formatted %}
+        <div class="notes embedded-content ckanext-showcase-notes">
+          {{ pkg.showcase_notes_formatted }}
+>>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
+=======
+            {% link_for _('Manage'), named_route=showcase_edit_route, id=pkg.name, class_='btn btn-default', icon='wrench' %}
+>>>>>>> 1e1a6f1 (More new style routes)
         </div>
     {% endif %}
     {% block package_description %}
@@ -76,18 +165,21 @@
             <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
         {% endif %}
 
-    {% block package_notes %}
-      {% if pkg.showcase_notes_formatted and editor == 'ckeditor' %}
-        <div class="ck-content">
-          {{ pkg.showcase_notes_formatted|safe }}
-        </div>
-      {% elif pkg.showcase_notes_formatted %}
-        <div class="notes embedded-content ckanext-showcase-notes">
-          {{ pkg.showcase_notes_formatted }}
-        </div>
-      {% endif %}
+        {% block package_notes %}
+            {% if pkg.showcase_notes_formatted %}
+                <div class="notes embedded-content ckanext-showcase-notes">
+                    {{ pkg.showcase_notes_formatted }}
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% if pkg.url %}
+            <p><a class="btn btn-primary ckanext-showcase-launch" href="{{ pkg.url }}" target="_blank"><i class="fa fa-external-link icon-external-link"></i> {{ _('Launch website') }}</a></p>
+        {% endif %}
+
     {% endblock %}
 
+<<<<<<< HEAD
         {% if pkg.url %}
             <p><a class="btn btn-primary ckanext-showcase-launch" href="{{ pkg.url }}" target="_blank"><i class="fa fa-external-link icon-external-link"></i> {{ _('Launch website') }}</a></p>
         {% endif %}
@@ -98,6 +190,12 @@
         {% snippet "showcase/snippets/tags.html", tags=pkg.tags %}
     {% endblock %}
 
+=======
+    {% block package_tags %}
+        {% snippet "showcase/snippets/tags.html", tags=pkg.tags %}
+    {% endblock %}
+
+>>>>>>> dev
     {% block package_search_results_list %}
     {% endblock %}
 

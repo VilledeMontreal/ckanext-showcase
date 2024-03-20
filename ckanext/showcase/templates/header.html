@@ -2,6 +2,7 @@
 
 {% set ckan_29_or_higher = h.ckan_version().split('.')[1] | int >= 9 %}
 
+<<<<<<< HEAD
 
 {% set showcase_route = 'showcase_blueprint.index' if ckan_29_or_higher else 'showcase_index' %}
 
@@ -9,4 +10,33 @@
 {% block header_site_navigation_tabs %}
   {{ super() }}
   {{ h.build_nav_main((showcase_route, _('Showcases'))) }}
+=======
+{% set search_route = 'dataset.search' if ckan_29_or_higher else 'search' %}
+{% set org_route = 'organization.index' if ckan_29_or_higher else 'organizations_index' %}
+{% set group_route = 'group.index' if ckan_29_or_higher else 'group_index' %}
+{% set showcase_route = 'showcase_blueprint.index' if ckan_29_or_higher else 'showcase_index' %}
+{% set about_route = 'home.about' if ckan_29_or_higher else 'about' %}
+
+
+{% block header_site_navigation_tabs %}
+  {{ h.build_nav_main(
+<<<<<<< HEAD
+    ('search', _('Datasets')),
+    ('organizations_index', _('Organizations')),
+    ('group_index', _('Groups')),
+<<<<<<< HEAD
+    ('showcase_index', _('Showcases')),
+    ('about', _('About'))
+=======
+    ('ckanext_showcase_index', _('Showcases')),
+=======
+    (search_route, _('Datasets')),
+    (org_route, _('Organizations')),
+    (group_route, _('Groups')),
+    (showcase_route, _('Showcases')),
+>>>>>>> e458c25 (Use new style routes on CKAN >= 2.9)
+    (about_route, _('About'))
+>>>>>>> a86dac7 (Update route name to avoid deprecation warning)
+  ) }}
+>>>>>>> dev
 {% endblock %}

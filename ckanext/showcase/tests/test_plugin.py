@@ -30,7 +30,11 @@ class TestShowcaseIndex(object):
         assert "my-showcase" in response.body
 
 
+<<<<<<< HEAD
 @pytest.mark.usefixtures("clean_db")
+=======
+@pytest.mark.usefixtures("clean_db", "clean_index")
+>>>>>>> dev
 class TestShowcaseNewView(object):
     def test_showcase_create_form_renders(self, app):
 
@@ -63,6 +67,7 @@ class TestShowcaseNewView(object):
         assert (
             url_for("showcase_manage_datasets", id="my-showcase")
             == create_response.request.path
+<<<<<<< HEAD
         )
 
 
@@ -73,6 +78,44 @@ class TestShowcaseEditView(object):
         Edit form renders in response for ShowcaseController edit action.
         """
 
+=======
+        )
+
+    def test_create_showcase(self, app):
+        if not tk.check_ckan_version(min_version='2.9.0'):
+            # Remove when dropping support for 2.8
+            pytest.skip("data argument not supported in post()")
+
+        sysadmin = factories.Sysadmin()
+
+        env = {"REMOTE_USER": sysadmin["name"].encode("ascii")}
+        app.post(
+            url=url_for("showcase_new"),
+            extra_environ=env,
+            data={
+                "name": "my-test-showcase",
+                "image_url": "",
+                "notes": "My new description!"
+                }
+            )
+
+        res = app.get(
+            url=url_for("showcase_read", id="my-test-showcase"),
+            extra_environ=env,
+        )
+        assert "my-test-showcase" in res.body
+        assert "My new description!" in res.body
+
+
+
+@pytest.mark.usefixtures("clean_db", "clean_index")
+class TestShowcaseEditView(object):
+    def test_showcase_edit_form_renders(self, app):
+        """
+        Edit form renders in response for ShowcaseController edit action.
+        """
+
+>>>>>>> dev
         sysadmin = factories.Sysadmin()
         factories.Dataset(name="my-showcase", type="showcase")
 
@@ -104,6 +147,7 @@ class TestShowcaseEditView(object):
         assert (
             url_for("showcase_read", id="my-changed-showcase")
             == edit_response.request.path
+<<<<<<< HEAD
         )
 
 
@@ -182,6 +226,111 @@ class TestDatasetView(object):
             url=url_for("showcase_dataset_showcase_list", id=dataset["id"])
         )
 
+=======
+        )
+
+    def test_edit_showcase(self, app):
+        if not tk.check_ckan_version(min_version='2.9.0'):
+            # Remove when dropping support for 2.8
+            pytest.skip("data argument not supported in post()")
+
+        sysadmin = factories.Sysadmin()
+        factories.Dataset(name="my-showcase", type="showcase")
+        env = {"REMOTE_USER": sysadmin["name"]}
+
+        app.post(
+            url=url_for("showcase_edit", id="my-showcase"),
+            extra_environ=env,
+            data={
+                "name": "my-edited-showcase",
+                "notes": "My new description!",
+                "image_url": ""
+            }
+        )
+        res = app.get(
+            url=url_for("showcase_edit", id="my-edited-showcase"),
+            extra_environ=env,
+        )
+        assert "my-edited-showcase" in res.body
+        assert "My new description!" in res.body
+
+
+@pytest.mark.usefixtures("clean_db", "clean_index")
+class TestDatasetView(object):
+
+    """Plugin adds a new showcases view for datasets."""
+
+    def test_dataset_read_has_showcases_tab(self, app):
+        """
+        Dataset view page has a new Showcases tab linked to the correct place.
+        """
+
+        dataset = factories.Dataset(name="my-dataset")
+
+        if tk.check_ckan_version("2.9"):
+            url = url = url_for("dataset.read", id=dataset["id"])
+        else:
+            url = url_for(
+                controller="package", action="read", id=dataset["id"]
+            )
+        response = app.get(url)
+        # response contains link to dataset's showcase list
+        assert "/dataset/showcases/{0}".format(dataset["name"]) in response
+
+    def test_dataset_showcase_page_lists_showcases_no_associations(self, app):
+        """
+        No showcases are listed if dataset has no showcase associations.
+        """
+
+        dataset = factories.Dataset(name="my-dataset")
+
+        response = app.get(
+            url=url_for("showcase_dataset_showcase_list", id=dataset["id"])
+        )
+
+        assert (
+            len(
+                BeautifulSoup(response.body).select(
+                    "ul.media-grid li.media-item"
+                )
+            )
+            == 0
+        )
+
+    def test_dataset_showcase_page_lists_showcases_two_associations(self, app):
+        """
+        Two showcases are listed for dataset with two showcase associations.
+        """
+
+        sysadmin = factories.Sysadmin()
+        dataset = factories.Dataset(name="my-dataset")
+        showcase_one = factories.Dataset(
+            name="my-first-showcase", type="showcase"
+        )
+        showcase_two = factories.Dataset(
+            name="my-second-showcase", type="showcase"
+        )
+        factories.Dataset(name="my-third-showcase", type="showcase")
+
+        context = {"user": sysadmin["name"]}
+        helpers.call_action(
+            "ckanext_showcase_package_association_create",
+            context=context,
+            package_id=dataset["id"],
+            showcase_id=showcase_one["id"],
+        )
+        helpers.call_action(
+            "ckanext_showcase_package_association_create",
+            context=context,
+            package_id=dataset["id"],
+            showcase_id=showcase_two["id"],
+        )
+
+        response = app.get(
+            url=url_for("showcase_dataset_showcase_list", id=dataset["id"])
+        )
+
+>>>>>>> dev
         assert len(BeautifulSoup(response.body).select("li.media-item")) == 2
         assert "my-first-showcase" in response
         assert "my-second-showcase" in response
@@ -390,12 +539,29 @@ class TestSearch(object):
         Searching with non-ASCII filter queries works.
 
         See https://github.com/ckan/ckanext-showcase/issues/34.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        '''
+        app = self._get_test_app()
+        tag = u'\xe4\xf6\xfc'
+        dataset = factories.Dataset(tags=[{'name': tag, 'state': 'active'}])
+        result = helpers.call_action('package_search', fq='tags:' + tag)
+        nosetools.assert_equals(result['count'], 1)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dev
         """
 
         tag = u"\xe4\xf6\xfc"
         factories.Dataset(tags=[{"name": tag, "state": "active"}])
         result = helpers.call_action("package_search", fq="tags:" + tag)
         assert result["count"] == 1
+<<<<<<< HEAD
+=======
+>>>>>>> 84fb9e8 (pytest)
+>>>>>>> dev
 
 
 @pytest.mark.usefixtures('clean_db')
@@ -421,15 +587,53 @@ class TestCKEditor(object):
         response = app.get(
             url=url_for("showcase_edit", id="my-showcase",), extra_environ=env,
         )
+<<<<<<< HEAD
         assert '<textarea id="editor"' not in response.body
 
     @pytest.mark.ckan_config("ckanext.showcase.editor", "ckeditor")
     def test_custom_div_content_is_used_with_ckeditor(self, app):
+=======
+<<<<<<< HEAD
+        nosetools.assert_not_in('<textarea id="editor"', response.ubody)
+<<<<<<< HEAD
+>>>>>>> c8dbe90 (Add some basic tests)
+=======
+        assert '<textarea id="editor"' not in response.body
+>>>>>>> 84fb9e8 (pytest)
+=======
+
+<<<<<<< HEAD
+    @helpers.change_config('ckanext.showcase.editor', 'ckeditor')
+    def test_custom_div_content_is_used_with_ckeditor(self):
+        app = self._get_test_app()
+=======
+    @pytest.mark.ckan_config("ckanext.showcase.editor", "ckeditor")
+    def test_custom_div_content_is_used_with_ckeditor(self, app):
+>>>>>>> d540125 (Fix webassets)
+>>>>>>> dev
         sysadmin = factories.Sysadmin()
         factories.Dataset(name='my-showcase', type='showcase')
 
         env = {'REMOTE_USER': sysadmin['name'].encode('ascii')}
         response = app.get(
+<<<<<<< HEAD
             url=url_for("showcase_read", id="my-showcase",), extra_environ=env,
         )
         assert '<div class="ck-content">' in response.body
+=======
+<<<<<<< HEAD
+            url=url_for(controller='ckanext.showcase.controller:ShowcaseController',
+                        action='read',
+                        id='my-showcase'),
+            extra_environ=env,
+=======
+            url=url_for("showcase_read", id="my-showcase",), extra_environ=env,
+>>>>>>> d540125 (Fix webassets)
+        )
+<<<<<<< HEAD
+        nosetools.assert_in('<div class="ck-content">', response.ubody)
+>>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
+=======
+        assert '<div class="ck-content">' in response.body
+>>>>>>> 9170d1d (fix test)
+>>>>>>> dev

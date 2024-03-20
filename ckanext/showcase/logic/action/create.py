@@ -24,6 +24,7 @@ def showcase_create(context, data_dict):
 
     # force type to 'showcase'
     data_dict['type'] = 'showcase'
+<<<<<<< HEAD
     # If get_uploader is available (introduced for IUploader in CKAN 2.5), use
     # it, otherwise use the default uploader.
     # https://github.com/ckan/ckan/pull/2510
@@ -31,6 +32,9 @@ def showcase_create(context, data_dict):
         upload = uploader.get_uploader('showcase')
     except AttributeError:
         upload = uploader.Upload('showcase')
+=======
+    upload = uploader.get_uploader('showcase')
+>>>>>>> dev
 
     upload.update_data_dict(data_dict, 'image_url',
                             'image_upload', 'clear_upload')
@@ -112,10 +116,14 @@ def showcase_upload(context, data_dict):
     '''
     toolkit.check_access('ckanext_showcase_upload', context, data_dict)
 
+<<<<<<< HEAD
     try:
         upload = uploader.get_uploader('showcase_image')
     except AttributeError:
         upload = uploader.Upload('showcase_image')
+=======
+    upload = uploader.get_uploader('showcase_image')
+>>>>>>> dev
 
     upload.update_data_dict(data_dict, 'image_url', 'upload', 'clear_upload')
     upload.upload(uploader.get_max_image_size())

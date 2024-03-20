@@ -1,9 +1,6 @@
-import sqlalchemy
-
 import ckan.plugins.toolkit as toolkit
 import ckan.lib.dictization.model_dictize as model_dictize
 from ckan.lib.navl.dictization_functions import validate
-from ckan.logic import NotAuthorized
 
 from ckanext.showcase.logic.schema import (showcase_package_list_schema,
                                            package_showcase_list_schema)
@@ -11,9 +8,6 @@ from ckanext.showcase.model import ShowcasePackageAssociation, ShowcaseAdmin
 
 import logging
 log = logging.getLogger(__name__)
-
-_select = sqlalchemy.sql.select
-_and_ = sqlalchemy.and_
 
 
 @toolkit.side_effect_free
@@ -80,12 +74,59 @@ def showcase_package_list(context, data_dict):
         # active
         id_list = []
         for pkg_id in pkg_id_list:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            try:
+<<<<<<< HEAD
+<<<<<<< HEAD
+                pkg = toolkit.get_action('package_show')(context,
+                                                         {'id': pkg_id})
+                if pkg['state'] == 'active':
+                    pkg_list.append(pkg)
+            except NotAuthorized:
+                log.debug(
+                    'Not authorized to access Package with ID: ' + str(pkg_id))
+=======
+                pkg = toolkit.get_action('package_show')(context, {'id': pkg_id})
+                if pkg['state'] == 'active':
+                    pkg_list.append(pkg)
+            except NotAuthorized:
+                log.error('Not authorized to access Package with ID: ' + str(pkg_id))
+
+>>>>>>> fc7ff38 (except NotAuthorized when package can not be viewed)
+=======
+                pkg = toolkit.get_action('package_show')(context,
+                                                         {'id': pkg_id})
+                if pkg['state'] == 'active':
+                    pkg_list.append(pkg)
+            except NotAuthorized:
+                log.error(
+                    'Not authorized to access Package with ID: ' + str(pkg_id))
+>>>>>>> 28d29a6 (except NotAuthorized when package can not be viewed)
+=======
+            id_list.append(pkg_id[0])
+
+        q = ' OR '.join(id_list)
+        pkg_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'rows': 100})
+        pkg_list = pkg_list['results']
+
+>>>>>>> ee7d155 (Batch list actions to a single query)
+=======
+>>>>>>> dev
             id_list.append(pkg_id[0])
         q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in id_list]) + ')'
         _pkg_list = toolkit.get_action('package_search')(
             context,
             {'q': q, 'rows': 100})
         pkg_list = _pkg_list['results']
+<<<<<<< HEAD
+=======
+>>>>>>> 3cb90b1 (Use package_search to get related showcase/package)
+>>>>>>> dev
     return pkg_list
 
 
@@ -113,6 +154,7 @@ def package_showcase_list(context, data_dict):
     showcase_id_list = ShowcasePackageAssociation.get_showcase_ids_for_package(
         validated_data_dict['package_id'])
     showcase_list = []
+<<<<<<< HEAD
 
     q = ''
     fq = ''
@@ -126,7 +168,67 @@ def package_showcase_list(context, data_dict):
             context,
             {'q': q, 'fq': fq, 'rows': 100})
         showcase_list = _showcase_list['results']
+=======
+<<<<<<< HEAD
+    if showcase_id_list is not None:
+        # for each package id, get the package dict and append to list if
+        # active
+        id_list = []
+        for showcase_id in showcase_id_list:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
+            try:
+                showcase = toolkit.get_action('package_show')(
+                    context,
+                    {'id': showcase_id}
+                )
+                showcase_list.append(showcase)
+            except NotAuthorized:
+                log.debug('Not authorized to access Package with ID: '
+                          + str(showcase_id))
+<<<<<<< HEAD
 
+=======
+            showcase = toolkit.get_action('package_show')(context,
+                                                          {'id': showcase_id})
+            showcase_list.append(showcase)
+>>>>>>> 2cc3e65 (run test against multiple CKAN versions)
+=======
+>>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
+=======
+            id_list.append(pkg_id[0])
+=======
+            id_list.append(showcase_id[0])
+>>>>>>> 62ff22b (Fix syntax errors)
+>>>>>>> dev
+
+        q = ' OR '.join(id_list)
+        showcase_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'rows': 100})
+        showcase_list = showcase_list['results']
+
+>>>>>>> ee7d155 (Batch list actions to a single query)
+=======
+    # import ipdb; ipdb.sset_trace()
+    q = ''
+    fq = ''
+    if showcase_id_list:
+        id_list = []
+        for showcase_id in showcase_id_list:
+            id_list.append(showcase_id[0])
+        fq = 'dataset_type:showcase'
+        q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in id_list]) + ')'
+        _showcase_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'fq': fq, 'rows': 100})
+        showcase_list = _showcase_list['results']
+
+>>>>>>> 3cb90b1 (Use package_search to get related showcase/package)
     return showcase_list
 
 

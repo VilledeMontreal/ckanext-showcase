@@ -4,5 +4,9 @@
 
 {% block content_primary_nav %}
   {{ super() }}
+<<<<<<< HEAD
   {{ h.build_nav_icon(showcase_dataset_showcase_list_route, _('Showcases'), id=pkg.name, icon='picture-o') }}
+=======
+  {{ h.build_nav_icon(showcase_dataset_showcase_list_route, _('Showcases'), id=pkg.name) }}
+>>>>>>> dev
 {% endblock %}

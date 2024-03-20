@@ -222,7 +222,15 @@ class TestShowcaseAuthCreate(object):
         """
         An anon (not logged in) user can't access the create showcase page.
         """
+<<<<<<< HEAD
         _get_request(app, "/showcase/new", status=302)
+=======
+        if toolkit.check_ckan_version(min_version='2.10.0'):
+            _get_request(app, "/showcase/new", status=401)
+        else:
+            # Remove when dropping support for 2.9
+            _get_request(app, "/showcase/new", status=302)
+>>>>>>> dev
 
     def test_auth_logged_in_user_cant_view_create_showcase_page(self, app):
         """
@@ -305,11 +313,21 @@ class TestShowcaseAuthEdit(object):
         """
         An anon (not logged in) user can't access the showcase edit page.
         """
+<<<<<<< HEAD
 
         factories.Dataset(type="showcase", name="my-showcase")
 
         _get_request(app, "/showcase/edit/my-showcase", status=302)
 
+=======
+        factories.Dataset(type="showcase", name="my-showcase")
+        if toolkit.check_ckan_version(min_version='2.10.0'):
+            _get_request(app, "/showcase/edit/my-showcase", status=401)
+        else:
+            # Remove when dropping support for 2.9
+            _get_request(app, "/showcase/edit/my-showcase", status=302)
+
+>>>>>>> dev
     def test_auth_logged_in_user_cant_view_edit_showcase_page(self, app):
         """
         A logged in user can't access the showcase edit page.
@@ -366,9 +384,18 @@ class TestShowcaseAuthEdit(object):
         """
 
         factories.Dataset(type="showcase", name="my-showcase")
+<<<<<<< HEAD
 
         _get_request(app, "/showcase/manage_datasets/my-showcase", status=302)
 
+=======
+        if toolkit.check_ckan_version(min_version='2.10.0'):
+            _get_request(app, "/showcase/manage_datasets/my-showcase", status=401)
+        else:
+            # Remove when dropping support for 2.9
+            _get_request(app, "/showcase/manage_datasets/my-showcase", status=302)
+
+>>>>>>> dev
     def test_auth_logged_in_user_cant_view_manage_datasets(self, app):
         """
         A logged in user (not sysadmin) can't access the showcase manage datasets page.
@@ -425,9 +452,18 @@ class TestShowcaseAuthEdit(object):
         """
 
         factories.Dataset(type="showcase", name="my-showcase")
+<<<<<<< HEAD
 
         _get_request(app, "/showcase/delete/my-showcase", status=302)
 
+=======
+        if toolkit.check_ckan_version(min_version='2.10.0'):
+            _get_request(app, "/showcase/delete/my-showcase", status=401)
+        else:
+            # Remove when dropping support for 2.9
+            _get_request(app, "/showcase/delete/my-showcase", status=302)
+
+>>>>>>> dev
     def test_auth_logged_in_user_cant_view_delete_showcase_page(self, app):
         """
         A logged in user can't access the showcase delete page.
@@ -788,9 +824,18 @@ class TestShowcaseAuthManageShowcaseAdmins(object):
         An anon (not logged in) user can't access the manage showcase admin
         page.
         """
+<<<<<<< HEAD
 
         _get_request(app, "/showcase/new", status=302)
 
+=======
+        if toolkit.check_ckan_version(min_version='2.10.0'):
+            _get_request(app, "/showcase/new", status=401)
+        else:
+            # Remove when dropping support for 2.9
+            _get_request(app, "/showcase/new", status=302)
+
+>>>>>>> dev
     def test_auth_logged_in_user_cant_view_showcase_admin_manage_page(
         self, app
     ):

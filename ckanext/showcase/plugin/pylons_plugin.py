@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+<<<<<<< HEAD
 from routes.mapper import SubMapper
+=======
+>>>>>>> dev
 import ckan.plugins as p
 
 

@@ -12,9 +12,27 @@
 {% block subtitle %}{{ _('Showcases') }}{% endblock %}
 
 {% block styles %}
+<<<<<<< HEAD
+    {{ super() }}
+    <link rel="stylesheet" href="{{ g.site_url }}/ckanext_showcase.css" />
+=======
   {{ super() }}
+<<<<<<< HEAD
   {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
   {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  {% resource "showcase/ckanext_showcase.css" %}
+>>>>>>> 6c5cd46 (Fix issues with css files when ckan is installed in non-root path)
+=======
+  {% asset "showcase/ckanext-showcase-css" %}
+>>>>>>> d540125 (Fix webassets)
+=======
+  {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
+  {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
+>>>>>>> 3b31a35 (Add snippets for backward compatibility)
+>>>>>>> dev
 {% endblock %}
 
 {% block breadcrumb_content_selected %}{% endblock %}
@@ -32,7 +50,11 @@
 {% endblock %}
 
 {% block primary %}
+<<<<<<< HEAD
   <div class="{% block ckanext_showcase_edit_span %}primary col-sm-9 col-xs-12{% endblock %}">
+=======
+  <div class="{% block ckanext_showcase_edit_span %}span12{% endblock %}">
+>>>>>>> dev
     {% block primary_content %}
       <article class="module">
         {% block page_header %}

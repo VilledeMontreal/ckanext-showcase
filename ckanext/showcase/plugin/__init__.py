@@ -9,11 +9,9 @@ from collections import OrderedDict
 from six import string_types
 
 import ckan.plugins as plugins
+import ckan.plugins.toolkit as tk
 import ckan.lib.plugins as lib_plugins
 import ckan.lib.helpers as h
-from ckan import model as ckan_model
-
-import ckantoolkit as tk
 
 
 import ckanext.showcase.utils as utils
@@ -28,7 +26,6 @@ if tk.check_ckan_version(u'2.9'):
 else:
     from ckanext.showcase.plugin.pylons_plugin import MixinPlugin
 
-c = tk.c
 _ = tk._
 
 log = logging.getLogger(__name__)
@@ -46,6 +43,8 @@ class ShowcasePlugin(
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITranslation)
+
 
     # IConfigurer
 
@@ -53,7 +52,7 @@ class ShowcasePlugin(
         tk.add_template_directory(config, '../templates')
         tk.add_public_directory(config, '../public')
         tk.add_resource('../fanstatic', 'showcase')
-        if tk.check_ckan_version(min_version='2.4', max_version='2.9.0'):
+        if tk.check_ckan_version(min_version='2.7', max_version='2.9.0'):
             tk.add_ckan_admin_tab(config, 'showcase_admins',
                                   'Showcase Config')
         elif tk.check_ckan_version(min_version='2.9.0'):
@@ -178,23 +177,22 @@ class ShowcasePlugin(
 
         return pkg_dict
 
-    def after_show(self, context, pkg_dict):
+    # CKAN >= 2.10
+    def after_dataset_show(self, context, pkg_dict):
         '''
         Modify package_show pkg_dict.
         '''
         pkg_dict = self._add_to_pkg_dict(context, pkg_dict)
 
-    def before_view(self, pkg_dict):
+    def before_dataset_view(self, pkg_dict):
         '''
         Modify pkg_dict that is sent to templates.
         '''
-
-        context = {'model': ckan_model, 'session': ckan_model.Session,
-                   'user': c.user or c.author}
+        context = {'user': tk.g.user or tk.g.author}
 
         return self._add_to_pkg_dict(context, pkg_dict)
 
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         '''
         Unless the query is already being filtered by this dataset_type
         (either positively, or negatively), exclude datasets of type
@@ -205,3 +203,57 @@ class ShowcasePlugin(
         if filter not in fq:
             search_params.update({'fq': fq + " -" + filter})
         return search_params
+    
+    # CKAN < 2.10 (Remove when dropping support for 2.9)
+    def after_show(self, context, pkg_dict):
+        '''
+        Modify package_show pkg_dict.
+        '''
+        pkg_dict = self.after_dataset_show(context, pkg_dict)
+
+    def before_view(self, pkg_dict):
+        '''
+        Modify pkg_dict that is sent to templates.
+        '''
+        return self.before_dataset_view(pkg_dict)
+
+    def before_search(self, search_params):
+        '''
+        Unless the query is already being filtered by this dataset_type
+        (either positively, or negatively), exclude datasets of type
+        `showcase`.
+        '''
+        return self.before_dataset_search(search_params)
+
+    # ITranslation
+    def i18n_directory(self):
+        '''Change the directory of the *.mo translation files
+
+        The default implementation assumes the plugin is
+        ckanext/myplugin/plugin.py and the translations are stored in
+        i18n/
+        '''
+        # assume plugin is called ckanext.<myplugin>.<...>.PluginClass
+        extension_module_name = '.'.join(self.__module__.split('.')[0:2])
+        module = sys.modules[extension_module_name]
+        return os.path.join(os.path.dirname(module.__file__), 'i18n')
+
+    def i18n_locales(self):
+        '''Change the list of locales that this plugin handles
+
+        By default the will assume any directory in subdirectory in the
+        directory defined by self.directory() is a locale handled by this
+        plugin
+        '''
+        directory = self.i18n_directory()
+        return [d for
+                d in os.listdir(directory)
+                if os.path.isdir(os.path.join(directory, d))]
+
+    def i18n_domain(self):
+        '''Change the gettext domain handled by this plugin
+
+        This implementation assumes the gettext domain is
+        ckanext-{extension name}, hence your pot, po and mo files should be
+        named ckanext-{extension name}.mo'''
+        return 'ckanext-{name}'.format(name=self.name)

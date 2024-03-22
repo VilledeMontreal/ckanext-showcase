@@ -45,6 +45,7 @@ class ShowcasePlugin(
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.ITranslation)
 
+
     # IConfigurer
 
     def update_config(self, config):

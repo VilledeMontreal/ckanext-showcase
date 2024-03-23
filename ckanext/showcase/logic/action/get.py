@@ -75,10 +75,12 @@ def showcase_package_list(context, data_dict):
         validated_data_dict['showcase_id'])
 
     pkg_list = []
-    if pkg_id_list is not None:
+    if pkg_id_list:
         # for each package id, get the package dict and append to list if
         # active
+        id_list = []
         for pkg_id in pkg_id_list:
+<<<<<<< HEAD
             try:
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -106,6 +108,16 @@ def showcase_package_list(context, data_dict):
                 log.error(
                     'Not authorized to access Package with ID: ' + str(pkg_id))
 >>>>>>> 28d29a6 (except NotAuthorized when package can not be viewed)
+=======
+            id_list.append(pkg_id[0])
+
+        q = ' OR '.join(id_list)
+        pkg_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'rows': 100})
+        pkg_list = pkg_list['results']
+
+>>>>>>> ee7d155 (Batch list actions to a single query)
     return pkg_list
 
 
@@ -135,7 +147,11 @@ def package_showcase_list(context, data_dict):
 
     showcase_list = []
     if showcase_id_list is not None:
+        # for each package id, get the package dict and append to list if
+        # active
+        id_list = []
         for showcase_id in showcase_id_list:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -158,6 +174,16 @@ def package_showcase_list(context, data_dict):
 >>>>>>> 2cc3e65 (run test against multiple CKAN versions)
 =======
 >>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
+=======
+            id_list.append(pkg_id[0])
+
+        q = ' OR '.join(id_list)
+        showcase_list = toolkit.get_action('package_search')(
+            context,
+            {'q': q, 'rows': 100})
+        showcase_list = pkg_list['results']
+
+>>>>>>> ee7d155 (Batch list actions to a single query)
     return showcase_list
 
 

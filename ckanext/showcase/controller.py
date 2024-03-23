@@ -166,6 +166,7 @@ class ShowcaseController(PackageController):
         return render('admin/confirm_remove_showcase_admin.html')
 
     def showcase_upload(self):
+<<<<<<< HEAD
         if not tk.request.method == 'POST':
             tk.abort(409, _('Only Posting is availiable'))
 
@@ -179,3 +180,6 @@ class ShowcaseController(PackageController):
 
         return json.dumps(url)
 >>>>>>> bd1fd3c (Add upload feature for CKEditor content)
+=======
+        return utils.upload()
+>>>>>>> 3698b5d (Refactor showcase_upload)

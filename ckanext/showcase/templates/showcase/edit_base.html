@@ -45,7 +45,7 @@
 {% endblock %}
 
 {% block primary %}
-  <div class="{% block ckanext_showcase_edit_span %}span12{% endblock %}">
+  <div class="{% block ckanext_showcase_edit_span %}primary col-sm-9 col-xs-12{% endblock %}">
     {% block primary_content %}
       <article class="module">
         {% block page_header %}
@@ -79,6 +79,6 @@
   </div>
 {% endblock %}
 
-{% block secondary %}
-
+{% block secondary_content %}
+{{ h.snippet('showcase/snippets/helper.html') }}
 {% endblock %}

@@ -11,7 +11,11 @@
     <h3>{{ _('{site_title} statistics').format(site_title=g.site_title) }}</h3>
     <ul>
       <li>
+<<<<<<< HEAD
         <a href="{{ h.url_for(search_route) }}">
+=======
+        <a href="{{ h.url_for(controller='dataset', action='search') }}">
+>>>>>>> 8ef4f82 (Fix new and edit forms)
           <b>{{ h.SI_number_span(stats.dataset_count) }}</b>
           {{ ungettext('dataset', 'datasets', stats.dataset_count) }}
         </a>

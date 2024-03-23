@@ -1,7 +1,13 @@
 language: python
+
+# the new trusty images of Travis cause build errors with psycopg2, see https://github.com/travis-ci/travis-ci/issues/8897
+dist: trusty
+group: deprecated-2017Q4
+
 python:
     - "2.7"
 env:
+<<<<<<< HEAD
 <<<<<<< HEAD
     - CKAN_BRANCH=master
     - CKAN_BRANCH=release-v2.3-latest
@@ -14,11 +20,18 @@ env:
     - PGVERSION=9.1 CKAN_BRANCH=release-v2.5-latest
     - PGVERSION=9.1 CKAN_BRANCH=release-v2.6-latest
 >>>>>>> ae0aa8f (Test against CKAN 2.6)
+=======
+    - CKANVERSION=master
+    - CKANVERSION=2.7
+    - CKANVERSION=2.6
+    - CKANVERSION=2.5
+    - CKANVERSION=2.4
+    - CKANVERSION=2.3
+>>>>>>> 2cc3e65 (run test against multiple CKAN versions)
 install:
     - bash bin/travis-build.bash
-    - pip install coveralls -U
 services:
-    - postgresql
+    -postgresql
 script: sh bin/travis-run.sh
-after_success:
-    - coveralls
+after_success: coveralls
+sudo: required

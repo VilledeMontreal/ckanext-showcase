@@ -138,7 +138,8 @@ class ShowcasePlugin(
         return {
             'facet_remove_field': showcase_helpers.facet_remove_field,
             'get_site_statistics': showcase_helpers.get_site_statistics,
-            'get_wysiwyg_editor': showcase_helpers.get_wysiwyg_editor,
+            'showcase_get_wysiwyg_editor':
+                showcase_helpers.showcase_get_wysiwyg_editor,
         }
 
     # IFacets
@@ -277,7 +278,7 @@ class ShowcasePlugin(
                 context, {'showcase_id': pkg_dict['id']}))
 
         # Rendered notes
-        if showcase_helpers.get_wysiwyg_editor() == 'ckeditor':
+        if showcase_helpers.showcase_get_wysiwyg_editor() == 'ckeditor':
             pkg_dict[u'showcase_notes_formatted'] = pkg_dict['notes']
         else:
             pkg_dict[u'showcase_notes_formatted'] = \

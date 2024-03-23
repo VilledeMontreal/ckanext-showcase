@@ -9,12 +9,16 @@ from collections import OrderedDict
 from six import string_types
 
 import ckan.plugins as plugins
+import ckan.plugins.toolkit as tk
 import ckan.lib.plugins as lib_plugins
 import ckan.lib.helpers as h
 
+<<<<<<< HEAD
 import ckantoolkit as tk
 
 from routes.mapper import SubMapper
+=======
+>>>>>>> e4ddba0 (Use plugins.toolkit)
 
 import ckanext.showcase.utils as utils
 from ckanext.showcase.logic import auth, action

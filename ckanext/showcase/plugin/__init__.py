@@ -49,7 +49,10 @@ class ShowcasePlugin(
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
+<<<<<<< HEAD:ckanext/showcase/plugin/__init__.py
     plugins.implements(plugins.ITranslation)
+=======
+>>>>>>> 654e9b8 (Remove ITranslation implementation):ckanext/showcase/plugin.py
 
     # IConfigurer
 
@@ -332,6 +335,7 @@ class ShowcasePlugin(
         (either positively, or negatively), exclude datasets of type
         `showcase`.
         '''
+<<<<<<< HEAD:ckanext/showcase/plugin/__init__.py
         return self.before_dataset_search(search_params)
 
     # ITranslation
@@ -366,3 +370,11 @@ class ShowcasePlugin(
         ckanext-{extension name}, hence your pot, po and mo files should be
         named ckanext-{extension name}.mo'''
         return 'ckanext-{name}'.format(name=self.name)
+=======
+        fq = search_params.get('fq', '')
+        if 'dataset_type:{0}'.format(DATASET_TYPE_NAME) not in fq:
+            fq = "{0} -dataset_type:{1}".format(search_params.get('fq', ''),
+                                                DATASET_TYPE_NAME)
+            search_params.update({'fq': fq})
+        return search_params
+>>>>>>> 654e9b8 (Remove ITranslation implementation):ckanext/showcase/plugin.py

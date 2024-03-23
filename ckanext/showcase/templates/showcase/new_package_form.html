@@ -42,11 +42,19 @@
           {% resource 'showcase/dist/ckeditor.js' %}
           {% resource 'showcase/js/showcase-ckeditor.js' %}
 <<<<<<< HEAD
+<<<<<<< HEAD
           {% set attrs = {'data-module': 'showcase-ckeditor'} %}
           {{ form.textarea('notes', id='editor', label=_('Description'), placeholder=_('eg. Some useful notes about the data'), value=data.notes, error=errors.notes, attrs=attrs)}}
 >>>>>>> 186a023 (Use form.textarea instead of plain html)
 =======
           {% set ckeditor_attrs = {'data-module': 'showcase-ckeditor'} %}
+=======
+          {%
+            set ckeditor_attrs = {
+              'data-module': 'showcase-ckeditor',
+              'data-module-site_url': h.url('/', qualified=true)}
+          %}
+>>>>>>> bd1fd3c (Add upload feature for CKEditor content)
           {{ form.textarea('notes', id='editor', label=_('Description'), placeholder=_('eg. Some useful notes about the data'), value=data.notes, error=errors.notes, attrs=ckeditor_attrs)}}
 >>>>>>> d75a550 (Rename variable attrs)
         {% else %}

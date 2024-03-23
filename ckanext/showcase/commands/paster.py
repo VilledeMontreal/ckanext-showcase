@@ -34,15 +34,9 @@ from ckanext.showcase import utils
 
 class MigrationCommand(CkanCommand):
     '''
-    CKAN 'Related Items' to 'Showcase' migration command.
+    ckanext-showcase migration command.
 
     Usage::
-
-        paster showcase migrate -c <path to config file>
-            - Migrate Related Items to Showcases
-
-        paster showcase migrate -c <path to config file> [--allow-duplicates]
-            - Migrate Related Items to Showcases and allow duplicates
 
         paster showcase markdown-to-html -c <path to config file>
             - Migrate the notes of all showcases from markdown to html.
@@ -55,15 +49,6 @@ class MigrationCommand(CkanCommand):
     def __init__(self, name):
         super(CkanCommand, self).__init__(name)
 
-        self.parser.add_option('--allow-duplicates',
-                               dest='allow_duplicates',
-                               default=False,
-                               help='''Use this option to allow
-                            related items with duplicate titles to be migrated.
-                            Duplicate showcases will be created as
-                            'duplicate_<related-name>_<related-id>'.''',
-                               action='store_true')
-
     def command(self):
         '''
         Parse command line arguments and call appropriate method.
@@ -75,6 +60,7 @@ class MigrationCommand(CkanCommand):
         cmd = self.args[0]
         self._load_config()
 
+<<<<<<< HEAD
         if cmd == 'migrate':
             self.migrate()
 <<<<<<< HEAD
@@ -89,11 +75,15 @@ class MigrationCommand(CkanCommand):
 =======
         elif cmd == 'markdown-to-html':
 >>>>>>> dcb55ad (Rename command to use name formatting)
+=======
+        if cmd == 'markdown-to-html':
+>>>>>>> 855604e (Deprecate logic to migrate from Related Items)
             self.markdown_to_html()
 >>>>>>> 8f6d4c5 (Add test to migrate notes from markdown to html)
         else:
             print('Command "{0}" not recognized'.format(cmd))
 
+<<<<<<< HEAD
     def migrate(self):
 <<<<<<< HEAD
         utils.migrate(self.options.allow_duplicates)
@@ -191,6 +181,8 @@ migration can continue. Please correct and try again:"""
         else:
             return title
 
+=======
+>>>>>>> 855604e (Deprecate logic to migrate from Related Items)
     def markdown_to_html(self):
 <<<<<<< HEAD:ckanext/showcase/commands/migrate.py
         ''' Migrates the notes of all showcases from markdown to html.

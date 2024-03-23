@@ -39,6 +39,7 @@
           </div>
 =======
         {% if editor == 'ckeditor' %}
+<<<<<<< HEAD
           {% resource 'showcase/dist/ckeditor.js' %}
           {% resource 'showcase/js/showcase-ckeditor.js' %}
 <<<<<<< HEAD
@@ -49,6 +50,9 @@
 =======
           {% set ckeditor_attrs = {'data-module': 'showcase-ckeditor'} %}
 =======
+=======
+          {% asset 'showcase/ckeditor' %}
+>>>>>>> d540125 (Fix webassets)
           {%
             set ckeditor_attrs = {
               'data-module': 'showcase-ckeditor',

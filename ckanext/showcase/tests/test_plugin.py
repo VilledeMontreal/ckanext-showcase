@@ -441,18 +441,27 @@ class TestCKEditor(object):
 >>>>>>> 84fb9e8 (pytest)
 =======
 
+<<<<<<< HEAD
     @helpers.change_config('ckanext.showcase.editor', 'ckeditor')
     def test_custom_div_content_is_used_with_ckeditor(self):
         app = self._get_test_app()
+=======
+    @pytest.mark.ckan_config("ckanext.showcase.editor", "ckeditor")
+    def test_custom_div_content_is_used_with_ckeditor(self, app):
+>>>>>>> d540125 (Fix webassets)
         sysadmin = factories.Sysadmin()
         factories.Dataset(name='my-showcase', type='showcase')
 
         env = {'REMOTE_USER': sysadmin['name'].encode('ascii')}
         response = app.get(
+<<<<<<< HEAD
             url=url_for(controller='ckanext.showcase.controller:ShowcaseController',
                         action='read',
                         id='my-showcase'),
             extra_environ=env,
+=======
+            url=url_for("showcase_read", id="my-showcase",), extra_environ=env,
+>>>>>>> d540125 (Fix webassets)
         )
 <<<<<<< HEAD
         nosetools.assert_in('<div class="ck-content">', response.ubody)

@@ -454,5 +454,9 @@ class TestCKEditor(object):
                         id='my-showcase'),
             extra_environ=env,
         )
+<<<<<<< HEAD
         nosetools.assert_in('<div class="ck-content">', response.ubody)
 >>>>>>> 4743ed5 (Store notes in html if ckeditor is loaded)
+=======
+        assert '<div class="ck-content">' in response.body
+>>>>>>> 9170d1d (fix test)

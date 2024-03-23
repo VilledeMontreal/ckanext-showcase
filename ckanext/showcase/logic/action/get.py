@@ -137,6 +137,9 @@ def package_showcase_list(context, data_dict):
     if showcase_id_list is not None:
         for showcase_id in showcase_id_list:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
             try:
                 showcase = toolkit.get_action('package_show')(
                     context,
@@ -146,12 +149,15 @@ def package_showcase_list(context, data_dict):
             except NotAuthorized:
                 log.error('Not authorized to access Package with ID: '
                           + str(showcase_id))
+<<<<<<< HEAD
 
 =======
             showcase = toolkit.get_action('package_show')(context,
                                                           {'id': showcase_id})
             showcase_list.append(showcase)
 >>>>>>> 2cc3e65 (run test against multiple CKAN versions)
+=======
+>>>>>>> 1f18935 (Merge pull request #2 from opendatazurich/fix-display-showcases)
     return showcase_list
 
 
